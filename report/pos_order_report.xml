@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="action_report_pos_order_receipt"
+        model="caffeine_discount.pos_order"
+        string="POS Order Receipt"
+        report_type="qweb-pdf"
+        name="caffeine_discount.report_pos_order_receipt"
+        file="caffeine_discount.report_pos_order_receipt"
+        attachment_use="False"
+    />
+</odoo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Категорія Напої (Drink) -->
+    <record id="product_category_drink" model="product.category">
+        <field name="name">Drink</field>
+    </record>
+
+    <!-- Категорія Їжа (Food) -->
+    <record id="product_category_food" model="product.category">
+        <field name="name">Food</field>
+    </record>
+
+    <!-- Категорія Кава (Coffee) -->
+    <record id="product_category_coffee" model="product.category">
+        <field name="name">Coffee</field>
+    </record>
+</odoo>

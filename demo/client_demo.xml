@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="demo_client_1" model="caffeine_discount.client">
+        <field name="first_name">Oleksandr</field>
+        <field name="last_name">Shevchenko</field>
+        <field name="phone">+380501234567</field>
+        <field name="email">oleksandr.shevchenko@example.com</field>
+        <field name="address">vul. Shevchenka, 12, Kyiv</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1990-01-01</field>
+        <field name="loyalty_points">100</field>
+    </record>
+    <record id="demo_client_2" model="caffeine_discount.client">
+        <field name="first_name">Olena</field>
+        <field name="last_name">Kovalchuk</field>
+        <field name="phone">+380671234567</field>
+        <field name="email">olena.kovalchuk@example.com</field>
+        <field name="address">vul. Lesi Ukrainky, 18, Lviv</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1985-05-15</field>
+        <field name="loyalty_points">150</field>
+    </record>
+</odoo>

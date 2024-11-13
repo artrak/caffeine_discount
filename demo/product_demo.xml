@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="demo_product_1" model="caffeine_discount.product">
+        <field name="name">Espreso</field>
+        <field name="category">coffee</field>
+        <field name="lst_price">3.50</field>
+        <field name="stock">50</field>
+    </record>
+    <record id="demo_product_2" model="caffeine_discount.product">
+        <field name="name">Latte</field>
+        <field name="category">coffee</field>
+        <field name="lst_price">4.50</field>
+        <field name="stock">30</field>
+    </record>
+    <record id="demo_product_3" model="caffeine_discount.product">
+        <field name="name">Kruasan</field>
+        <field name="category">food</field>
+        <field name="lst_price">2.00</field>
+        <field name="stock">20</field>
+    </record>
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="demo_discount_10_percent" model="caffeine_discount.discount">
+        <field name="name">Znyzhka 10%</field>
+        <field name="discount_type">percentage</field>
+        <field name="value">10</field>
+        <field name="start_date">2024-01-01</field>
+        <field name="end_date">2024-12-31</field>
+        <field name="product_ids" eval="[(6, 0, [ref('demo_product_1'), ref('demo_product_2')])]"/>
+    </record>
+    <record id="demo_discount_fixed" model="caffeine_discount.discount">
+        <field name="name">-1 hrn na kruasan</field>
+        <field name="discount_type">fixed</field>
+        <field name="value">1</field>
+        <field name="start_date">2024-01-01</field>
+        <field name="end_date">2024-12-31</field>
+        <field name="product_ids" eval="[(6, 0, [ref('demo_product_3')])]"/>
+    </record>
+</odoo>

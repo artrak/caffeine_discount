@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="demo_order_1" model="caffeine_discount.order">
+        <field name="order_date">2024-10-01 10:00:00</field>
+        <field name="client_id" ref="demo_client_1"/>
+        <field name="barista_id" ref="demo_barista_1"/>
+        <field name="order_line_ids" eval="[(0, 0, {'product_id': ref('demo_product_1'), 'quantity': 2}),
+                                             (0, 0, {'product_id': ref('demo_product_3'), 'quantity': 1})]"/>
+    </record>
+    <record id="demo_order_2" model="caffeine_discount.order">
+        <field name="order_date">2024-10-01 12:30:00</field>
+        <field name="client_id" ref="demo_client_2"/>
+        <field name="barista_id" ref="demo_barista_2"/>
+        <field name="order_line_ids" eval="[(0, 0, {'product_id': ref('demo_product_2'), 'quantity': 1}),
+                                             (0, 0, {'product_id': ref('demo_product_3'), 'quantity': 2})]"/>
+    </record>
+</odoo>

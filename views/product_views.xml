@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_product_kanban" model="ir.ui.view">
+            <field name="name">caffeine_discount.product.kanban</field>
+            <field name="model">product.product</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_small_column" string="Product">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click o_product_kanban_box">
+                                <!-- Фото -->
+                                <div class="o_kanban_image">
+                                    <img t-att-src="kanban_image('product.product', 'photo', record.id.raw_value)"
+                                         alt="Product Photo"
+                                         class="img-fluid rounded"/>
+                                </div>
+                                <div class="o_kanban_details">
+                                    <strong><field name="name"/></strong>
+                                    <div><field name="lst_price"/></div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+        <!-- Дерево-представлення для ModelProduct -->
+        <record id="view_model_product_tree" model="ir.ui.view">
+            <field name="name">model.product.tree</field>
+            <field name="model">product.product</field>
+            <field name="arch" type="xml">
+                <tree string="Products">
+                    <field name="name"/>
+                    <field name="category"/>
+                    <field name="category_id"/>
+                    <field name="stock"/>
+                    <field name="list_price"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Форма-представлення для ModelProduct -->
+        <record id="view_model_product_form" model="ir.ui.view">
+            <field name="name">model.product.form</field>
+            <field name="model">product.product</field>
+            <field name="arch" type="xml">
+                <form string="Product Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="category"/>
+                            <field name="category_id"/>
+                            <field name="stock"/>
+                            <field name="list_price"/>
+                            <field name="discount_ids"/>
+                        </group>
+                        <group>
+                            <field name="photo"
+                                   widget="image"
+                                   class="oe_avatar m-0"
+                                   options='{"zoom": true, "size": [250, 250]}'/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+        <record id="action_caffeine_discount_product" model="ir.actions.act_window">
+            <field name="name">Products</field>
+            <field name="res_model">product.product</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+
+    </data>
+</odoo>

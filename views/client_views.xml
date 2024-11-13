@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_client_form" model="ir.ui.view">
+            <field name="name">caffeine_discount.client.form</field>
+            <field name="model">caffeine_discount.client</field>
+            <field name="arch" type="xml">
+                <form string="Client">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="phone"/>
+                            <field name="email"/>
+                            <field name="address"/>
+                            <field name="gender"/>
+                            <field name="birth_date"/>
+                            <field name="age" readonly="1"/>
+<!--                            <field name="loyalty_points"/>-->
+                        </group>
+<!--                        <notebook>-->
+<!--                            <page string="Orders">-->
+<!--                                <field name="order_ids">-->
+<!--                                    <tree editable="bottom">-->
+<!--&lt;!&ndash;                                        <field name="total_amount"/>&ndash;&gt;-->
+<!--                                    </tree>-->
+<!--                                </field>-->
+<!--                            </page>-->
+<!--                        </notebook>-->
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_client_tree" model="ir.ui.view">
+            <field name="name">caffeine_discount.client.tree</field>
+            <field name="model">caffeine_discount.client</field>
+            <field name="arch" type="xml">
+                <tree string="Clients">
+                    <field name="name"/>
+                    <field name="gender"/>
+                    <field name="birth_date"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+<!--                    <field name="loyalty_points"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_caffeine_discount_client" model="ir.actions.act_window">
+            <field name="name">Clients</field>
+            <field name="res_model">caffeine_discount.client</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

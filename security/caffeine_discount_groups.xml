@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Group for Managers -->
+        <record id="group_caffeine_discount_manager" model="res.groups">
+            <field name="name">Caffeine Discount Manager</field>
+            <field name="category_id" ref="base.module_category_sales_management"/>
+            <field name="comment">Managers who can fully manage the Caffeine Discount module.</field>
+        </record>
+
+        <!-- Group for Baristas -->
+        <record id="group_caffeine_discount_barista" model="res.groups">
+            <field name="name">Caffeine Discount Barista</field>
+            <field name="category_id" ref="base.module_category_sales_management"/>
+            <field name="comment">Baristas who can view and use the loyalty and discount features but have limited management access.</field>
+        </record>
+
+        <!-- Group for Clients -->
+        <record id="group_caffeine_discount_client" model="res.groups">
+            <field name="name">Caffeine Discount Client</field>
+            <field name="category_id" ref="base.module_category_sales_management"/>
+            <field name="comment">Clients who can access and view their loyalty points and discounts via the client portal.</field>
+        </record>
+
+    </data>
+</odoo>

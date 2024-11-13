@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_discount_form" model="ir.ui.view">
+            <field name="name">caffeine_discount.discount.form</field>
+            <field name="model">caffeine_discount.discount</field>
+            <field name="arch" type="xml">
+                <form string="Discount">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="discount_type"/>
+                            <field name="value"/>
+                            <field name="is_active"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                        </group>
+                        <field name="product_ids">
+                            <tree>
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_discount_tree" model="ir.ui.view">
+            <field name="name">caffeine_discount.discount.tree</field>
+            <field name="model">caffeine_discount.discount</field>
+            <field name="arch" type="xml">
+                <tree string="Discounts">
+                    <field name="name"/>
+                    <field name="discount_type"/>
+                    <field name="value"/>
+                    <field name="is_active" readonly="1"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_caffeine_discount_discount" model="ir.actions.act_window">
+            <field name="name">Discounts</field>
+            <field name="res_model">caffeine_discount.discount</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

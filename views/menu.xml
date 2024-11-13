@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Дія для Orders -->
+<!--    <record id="action_caffeine_discount_order" model="ir.actions.act_window">-->
+<!--        <field name="name">Orders</field>-->
+<!--        <field name="res_model">sale.order</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--        <field name="view_id" ref="view_order_tree"/>-->
+<!--        <field name="target">current</field>-->
+<!--    </record>-->
+
+    <!-- Root menu item for the Caffeine Discount module -->
+    <menuitem id="menu_caffeine_discount_root" name="Caffeine Discount" sequence="1" />
+
+    <!-- Submenu for Clients -->
+    <menuitem id="menu_caffeine_discount_client"
+              name="Clients"
+              parent="menu_caffeine_discount_root"
+              sequence="10"
+              action="action_caffeine_discount_client" />
+
+    <!-- Submenu for Baristas -->
+    <menuitem id="menu_caffeine_discount_barista"
+              name="Baristas"
+              parent="menu_caffeine_discount_root"
+              sequence="20"
+              action="action_caffeine_discount_barista" />
+
+    <!-- Submenu for Products -->
+    <menuitem id="menu_caffeine_discount_product"
+              name="Products"
+              parent="menu_caffeine_discount_root"
+              sequence="30"
+              action="action_caffeine_discount_product" />
+
+    <!-- Submenu for Orders -->
+    <menuitem id="menu_caffeine_discount_order"
+              name="Orders"
+              parent="menu_caffeine_discount_root"
+              sequence="40"
+              action="action_caffeine_discount_order"/>
+
+    <!-- Submenu for Discounts -->
+    <menuitem id="menu_caffeine_discount_discount"
+              name="Discounts"
+              parent="menu_caffeine_discount_root"
+              sequence="50"
+              action="action_caffeine_discount_discount" />
+
+</odoo>

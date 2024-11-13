@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_barista_kanban" model="ir.ui.view">
+            <field name="name">caffeine_discount.barista.kanban</field>
+            <field name="model">caffeine_discount.barista</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_small_column" string="Baristas">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click o_barista_kanban_box">
+                                <!-- Фото -->
+                                <div class="o_kanban_image">
+                                    <img t-att-src="kanban_image('caffeine_discount.barista', 'photo', record.id.raw_value)" alt="Barista Photo" class="img-fluid rounded"/>
+
+                                </div>
+                                <div class="o_kanban_details">
+                                    <strong><field name="name"/></strong>
+                                    <div><field name="shift"/></div>
+                                    <div><field name="phone"/></div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_barista_form" model="ir.ui.view">
+            <field name="name">caffeine_discount.barista.form</field>
+            <field name="model">caffeine_discount.barista</field>
+            <field name="arch" type="xml">
+                <form string="Barista">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="phone"/>
+                            <field name="email"/>
+                            <field name="gender"/>
+                            <field name="shift"/>
+                        </group>
+                        <group>
+                            <field name="photo"
+                                   widget="image"
+                                   class="oe_avatar m-0"
+                                   options='{"zoom": true, "size": [250, 250]}'/>
+                        </group>
+                        <notebook>
+                            <page string="Orders">
+                                <field name="order_ids">
+                                    <tree editable="bottom">
+<!--                                        <field name="total_amount"/>-->
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+<!--        <record id="view_barista_tree" model="ir.ui.view">-->
+<!--            <field name="name">caffeine_discount.barista.tree</field>-->
+<!--            <field name="model">caffeine_discount.barista</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <tree string="Baristas">-->
+<!--                    <field name="name"/>-->
+<!--                    <field name="phone"/>-->
+<!--                    <field name="shift"/>-->
+<!--                </tree>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="action_caffeine_discount_barista" model="ir.actions.act_window">
+            <field name="name">Baristas</field>
+            <field name="res_model">caffeine_discount.barista</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+    </data>
+</odoo>

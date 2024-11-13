@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="demo_barista_1" model="caffeine_discount.barista">
+        <field name="first_name">Ivan</field>
+        <field name="last_name">Melnyk</field>
+        <field name="phone">+380931234567</field>
+        <field name="email">ivan.melnyk@example.com</field>
+        <field name="gender">male</field>
+        <field name="employee_id">B001</field>
+        <field name="shift">morning</field>
+    </record>
+    <record id="demo_barista_2" model="caffeine_discount.barista">
+        <field name="first_name">Anna</field>
+        <field name="last_name">Lysenko</field>
+        <field name="phone">+380991234567</field>
+        <field name="email">anna.lysenko@example.com</field>
+        <field name="gender">female</field>
+        <field name="employee_id">B002</field>
+        <field name="shift">evening</field>
+    </record>
+</odoo>

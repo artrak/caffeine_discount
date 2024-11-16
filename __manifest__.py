@@ -43,6 +43,11 @@
         # 'demo/order_demo.xml',
     ],
 
+    'assets': {
+        'web.assets_backend': [
+            '/caffeine_discount/static/src/css/style.css',  # Шлях до вашого CSS
+        ],
+    },
 
     'installable': True,
     'application': True,

@@ -23,6 +23,7 @@ class SaleOrder(models.Model):
     partner_id = fields.Many2one(
         comodel_name='res.partner',
         string='Customer',
+        ondelete='cascade',
         required=True,
         default=lambda self: self.env.user.partner_id
     )

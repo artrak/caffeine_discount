@@ -6,23 +6,26 @@
             <field name="model">product.product</field>
             <field name="arch" type="xml">
                 <kanban class="o_kanban_small_column" string="Product">
-                    <templates>
-                        <t t-name="kanban-box">
-                            <div t-attf-class="oe_kanban_global_click o_product_kanban_box">
-                                <!-- Фото -->
-                                <div class="o_kanban_image">
-                                    <img t-att-src="kanban_image('product.product', 'photo', record.id.raw_value)"
-                                         alt="Product Photo"
-                                         class="img-fluid rounded"/>
-                                </div>
-                                <div class="o_kanban_details">
-                                    <strong><field name="name"/></strong>
-                                    <div><field name="lst_price"/></div>
-                                </div>
-                            </div>
-                        </t>
-                    </templates>
-                </kanban>
+    <templates>
+        <t t-name="kanban-box">
+            <div t-attf-class="oe_kanban_global_click o_product_kanban_box">
+                <!-- Контейнер для зображення -->
+                <div class="o_kanban_image_container">
+                    <!-- Фото -->
+                    <field name="image_1920"
+                           widget="image"
+                           class="oe_avatar"
+                           alt="Product Photo" />
+                    <!-- Текст -->
+                    <div class="o_kanban_text_overlay">
+                        <strong><field name="name"/></strong>
+                        <div><field name="lst_price"/></div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </templates>
+</kanban>
             </field>
         </record>
 
@@ -49,24 +52,35 @@
             <field name="arch" type="xml">
                 <form string="Product Form">
                     <sheet>
+                        <div class="form_layout_container">
+                            <!-- Ліва частина -->
+                            <div class="form_left_section">
+                                <group>
+                                    <field name="name"/>
+                                    <field name="category"/>
+                                    <field name="category_id"/>
+                                    <field name="stock"/>
+                                    <field name="list_price"/>
+                                </group>
+                            </div>
+
+                            <!-- Права частина з фото -->
+                            <div class="form_right_section">
+                                <field name="image_1920"
+                                       widget="image"
+                                       class="oe_avatar_form"
+                                       alt="Product Photo"/>
+                            </div>
+                        </div>
+
                         <group>
-                            <field name="name"/>
-                            <field name="category"/>
-                            <field name="category_id"/>
-                            <field name="stock"/>
-                            <field name="list_price"/>
                             <field name="discount_ids"/>
-                        </group>
-                        <group>
-                            <field name="photo"
-                                   widget="image"
-                                   class="oe_avatar m-0"
-                                   options='{"zoom": true, "size": [250, 250]}'/>
                         </group>
                     </sheet>
                 </form>
             </field>
         </record>
+
 
 
 

@@ -29,6 +29,18 @@ class PersonMixin(models.AbstractModel):
         string='Related Partner'
     )
 
+    total_order_amount = fields.Float(
+        string='Total Order Amount',
+        compute='_compute_total_order_amount',
+        store=True
+    )
+
+    @api.depends('order_ids.amount_total')
+    def _compute_total_order_amount(self):
+        for client in self:
+            client.total_order_amount \
+                = sum(order.amount_total for order in client.order_ids)
+
     @api.model
     def create(self, vals):
         if 'partner_id' not in vals:

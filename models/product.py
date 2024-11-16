@@ -21,3 +21,5 @@ class ModelProduct(models.Model):
     )
 
     stock = fields.Integer(string='Stock Quantity', default=0)
+
+    # photo = fields.Image("Photo", max_width=1024, max_height=1024)

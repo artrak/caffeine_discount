@@ -9,7 +9,7 @@ class ModelClient(models.Model):
     loyalty_points = fields.Integer(string='Loyalty Points', default=0)
     order_ids = fields.One2many(
         comodel_name='sale.order',
-        inverse_name='partner_id',
+        inverse_name='client_id',
         string='Orders'
     )
     address = fields.Char(string='Address')

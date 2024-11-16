@@ -1,4 +1,5 @@
 from . import (
+    res_partner,
     person_mixin,
     client,
     barista,

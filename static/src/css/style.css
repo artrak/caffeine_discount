@@ -1,0 +1,55 @@
+/* Загальний контейнер для форми */
+.form_layout_container {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Ліва частина (поля) */
+.form_left_section {
+    flex: 1;
+    margin-right: 20px;
+}
+
+/* Права частина (фото) */
+.form_right_section {
+    flex: 0 0 400px;
+    text-align: right;
+}
+
+/* Стилі фото */
+.oe_avatar_form {
+    width: auto !important; /* Ширина фото */
+    height: auto !important; /* Висота фото */
+    object-fit: contain; /* Пропорційне масштабування */
+}
+
+/* Kanban стилі (опціонально, якщо використовуються в іншому місці) */
+.o_product_kanban_box {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.o_kanban_image_container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.o_kanban_image_container .oe_avatar {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.oe_avatar {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}

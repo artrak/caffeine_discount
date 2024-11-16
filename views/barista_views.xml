@@ -11,13 +11,20 @@
                             <div t-attf-class="oe_kanban_global_click o_barista_kanban_box">
                                 <!-- Фото -->
                                 <div class="o_kanban_image">
-                                    <img t-att-src="kanban_image('caffeine_discount.barista', 'photo', record.id.raw_value)" alt="Barista Photo" class="img-fluid rounded"/>
-
+                                    <img t-att-src="kanban_image('caffeine_discount.barista', 'photo', record.id.raw_value)"
+                                         alt="Barista Photo" class="img-fluid rounded"/>
                                 </div>
                                 <div class="o_kanban_details">
                                     <strong><field name="name"/></strong>
                                     <div><field name="shift"/></div>
-                                    <div><field name="phone"/></div>
+                                    <div>
+                                        <t>Phone: </t>
+                                        <field name="phone"/>
+                                    </div>
+                                    <div>
+                                        <t>Sales: </t>
+                                        <field name="total_order_amount" readonly="1"/>
+                                    </div>
                                 </div>
                             </div>
                         </t>
@@ -32,24 +39,31 @@
             <field name="arch" type="xml">
                 <form string="Barista">
                     <sheet>
-                        <group>
-                            <field name="name"/>
-                            <field name="phone"/>
-                            <field name="email"/>
-                            <field name="gender"/>
-                            <field name="shift"/>
-                        </group>
-                        <group>
-                            <field name="photo"
-                                   widget="image"
-                                   class="oe_avatar m-0"
-                                   options='{"zoom": true, "size": [250, 250]}'/>
-                        </group>
+                        <div class="form_layout_container">
+                            <div class="form_left_section">
+                                <group>
+                                    <field name="name"/>
+                                    <field name="phone"/>
+                                    <field name="email"/>
+                                    <field name="gender"/>
+                                    <field name="shift"/>
+                                    <field name="total_order_amount" readonly="1"/>
+                                </group>
+                            </div>
+                            <div class="form_right_section">
+                                <field name="photo"
+                                       widget="image"
+                                       class="oe_avatar_form"
+                                       alt="Barista Photo"/>
+                            </div>
+                        </div>
                         <notebook>
                             <page string="Orders">
-                                <field name="order_ids">
-                                    <tree editable="bottom">
-<!--                                        <field name="total_amount"/>-->
+                                <field name="order_ids" domain="[('barista_id', '=', id)]" readonly="1">
+                                    <tree create="false" delete="false" edit="false">
+                                        <field name="name"/>
+                                        <field name="order_date"/>
+                                        <field name="amount_total"/>
                                     </tree>
                                 </field>
                             </page>

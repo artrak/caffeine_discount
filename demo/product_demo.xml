@@ -8,6 +8,7 @@
             <field name="image_1920" type="base64"
                    file="caffeine_discount/static/img/cappuccino.jpg"
             />
+            <field name="taxes_id" eval="[(6, 0, [])]"/>
         </record>
         <record id="product_latte" model="product.product">
             <field name="name">Латте</field>
@@ -17,6 +18,7 @@
             <field name="image_1920" type="base64"
                    file="caffeine_discount/static/img/latte.jpg"
             />
+            <field name="taxes_id" eval="[(6, 0, [])]"/>
         </record>
         <record id="product_espresso" model="product.product">
             <field name="name">Еспресо</field>
@@ -26,6 +28,7 @@
             <field name="image_1920" type="base64"
                    file="caffeine_discount/static/img/espresoo.jpg"
             />
+            <field name="taxes_id" eval="[(6, 0, [])]"/>
         </record>
         <record id="product_croissant" model="product.product">
             <field name="name">Круасан</field>
@@ -35,6 +38,7 @@
             <field name="image_1920" type="base64"
                    file="caffeine_discount/static/img/cruasan.jpg"
             />
+            <field name="taxes_id" eval="[(6, 0, [])]"/>
         </record>
         <record id="product_tea" model="product.product">
             <field name="name">Чай</field>
@@ -44,6 +48,7 @@
             <field name="image_1920" type="base64"
                    file="caffeine_discount/static/img/tea.jpg"
             />
+            <field name="taxes_id" eval="[(6, 0, [])]"/>
         </record>
         <record id="product_sandwich" model="product.product">
             <field name="name">Сендвіч</field>
@@ -53,6 +58,7 @@
             <field name="image_1920" type="base64"
                    file="caffeine_discount/static/img/sendvich.jpg"
             />
+            <field name="taxes_id" eval="[(6, 0, [])]"/>
         </record>
         <record id="product_americano" model="product.product">
             <field name="name">Американо</field>
@@ -62,6 +68,7 @@
             <field name="image_1920" type="base64"
                    file="caffeine_discount/static/img/americano.jpg"
             />
+            <field name="taxes_id" eval="[(6, 0, [])]"/>
         </record>
     </data>
 </odoo>

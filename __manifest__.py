@@ -19,6 +19,11 @@
     },
 
     'data': [
+        # 'security/caffeine_discount_groups.xml'
+        'security/ir.model.access.csv',
+        # 'security/caffeine_discount_security.xml'
+
+        'wizard/discount_dates_wizard_views.xml',
 
         'views/client_views.xml',
         'views/barista_views.xml',
@@ -28,11 +33,11 @@
         'views/discount_views.xml',
         'views/menu.xml',
 
-        # 'security/caffeine_discount_groups.xml'
-        'security/ir.model.access.csv',
-        # 'security/caffeine_discount_security.xml'
 
         'data/product_category_data.xml',
+
+        'report/order_report_template.xml',
+
     ],
 
     'demo': [

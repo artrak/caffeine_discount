@@ -28,6 +28,10 @@ class SaleOrder(models.Model):
         default=lambda self: self.env.user.partner_id
     )
 
+    def print_receipt(self):
+        return self.env.ref(
+            'caffeine_discount.report_sale_order_receipt').report_action(self)
+
     @api.model
     def default_get(self, fields_list):
         # Отримуємо стандартні значення

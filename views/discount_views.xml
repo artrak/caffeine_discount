@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+
         <record id="view_discount_form" model="ir.ui.view">
             <field name="name">caffeine_discount.discount.form</field>
             <field name="model">caffeine_discount.discount</field>
@@ -8,7 +9,7 @@
                 <form string="Discount">
                     <header>
                         <!-- Status bar to display the status of the discount_type -->
-                        <field name="discount_type" widget="statusbar" options="{'clickable': '1'}"/>
+                        <field name="discount_type" widget="statusbar" options="{'clickable': '1'}"/><!-- Button to change the personal doctor of a patient -->
                     </header>
                     <sheet>
                         <group>
@@ -50,6 +51,11 @@
             <field name="model">caffeine_discount.discount</field>
             <field name="arch" type="xml">
                 <tree string="Discounts">
+                    <header>
+                       <button name="%(action_update_discount_dates_wizard)d"
+                                string="Change discount date"
+                                type="action"/>
+                    </header>
                     <field name="name"/>
                     <field name="discount_type"/>
                     <field name="value"/>
@@ -59,6 +65,7 @@
                 </tree>
             </field>
         </record>
+
 
         <record id="view_discount_calendar" model="ir.ui.view">
             <field name="name">Calendar</field>

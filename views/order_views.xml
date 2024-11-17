@@ -8,10 +8,10 @@
                 <tree string="Orders">
                     <field name="name"/>
                     <field name="barista_id"/>
-                    <field name="client_id"/>
+                    <field name="client_id" optional="hide"/>
                     <field name="order_line" widget="many2many_tags" />
                     <field name="order_date"/>
-                    <field name="amount_untaxed" string="amount"/>
+                    <field name="amount_untaxed" string="amount" sum="Total"/>
                 </tree>
             </field>
         </record>

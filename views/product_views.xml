@@ -19,8 +19,8 @@
                                            alt="Product Photo" />
                                     <!-- Текст -->
                                     <div class="o_kanban_text_overlay">
-                                        <strong><field name="name"/></strong>
-                                        <div><field name="lst_price"/></div>
+                                        <strong style="font-size: xx-large;"><field name="name"/></strong>
+                                        <div><strong style="font-size: larger;"><field name="lst_price"/></strong></div>
                                     </div>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@
                 <tree string="Products">
                     <field name="name"/>
                     <field name="category"/>
-                    <field name="category_id"/>
+<!--                    <field name="category_id"/>-->
                     <field name="stock"/>
                     <field name="list_price"/>
                 </tree>
@@ -66,7 +66,7 @@
                                 <group>
                                     <field name="name"/>
                                     <field name="category"/>
-                                    <field name="category_id"/>
+<!--                                    <field name="category_id"/>-->
                                     <field name="stock"/>
                                     <field name="list_price"/>
                                 </group>

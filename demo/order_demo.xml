@@ -180,5 +180,73 @@
                 (0, 0, {'product_id': ref('caffeine_discount.product_cappuccino'), 'product_uom_qty': 2, 'price_unit': 50.0})
             ]"/>
         </record>
+
+        <!-- Order 16 -->
+        <record id="order_016" model="sale.order">
+            <field name="client_id" ref="caffeine_discount.client_horoshko_nataliia"/>
+            <field name="barista_id" ref="caffeine_discount.barista_ivan_karpenko"/>
+            <field name="order_date">2024-11-26 14:00:00</field>
+            <field name="partner_id" ref="caffeine_discount.barista_ivan_karpenko"/>
+            <field name="order_line" eval="[
+                (0, 0, {'product_id': ref('caffeine_discount.product_latte'), 'product_uom_qty': 3, 'price_unit': 55.0}),
+                (0, 0, {'product_id': ref('caffeine_discount.product_croissant'), 'product_uom_qty': 2, 'price_unit': 30.0}),
+                (0, 0, {'product_id': ref('caffeine_discount.product_americano'), 'product_uom_qty': 1, 'price_unit': 35.0})
+            ]"/>
+        </record>
+
+        <!-- Order 17 -->
+        <record id="order_017" model="sale.order">
+            <field name="client_id" ref="caffeine_discount.client_bondarenko_iryna"/>
+            <field name="barista_id" ref="caffeine_discount.barista_dmytro_shvets"/>
+            <field name="order_date">2024-11-27 09:45:00</field>
+            <field name="partner_id" ref="caffeine_discount.barista_dmytro_shvets"/>
+            <field name="order_line" eval="[
+                (0, 0, {'product_id': ref('caffeine_discount.product_tea'), 'product_uom_qty': 3, 'price_unit': 25.0}),
+                (0, 0, {'product_id': ref('caffeine_discount.product_sandwich'), 'product_uom_qty': 2, 'price_unit': 45.0}),
+                (0, 0, {'product_id': ref('caffeine_discount.product_cappuccino'), 'product_uom_qty': 1, 'price_unit': 50.0})
+            ]"/>
+        </record>
+
+        <!-- Order 18 -->
+        <record id="order_018" model="sale.order">
+            <field name="client_id" ref="caffeine_discount.client_vovk_anton"/>
+            <field name="barista_id" ref="caffeine_discount.barista_nataliia_melnyk"/>
+            <field name="order_date">2024-11-28 11:10:00</field>
+            <field name="partner_id" ref="caffeine_discount.barista_nataliia_melnyk"/>
+            <field name="order_line" eval="[
+                (0, 0, {'product_id': ref('caffeine_discount.product_espresso'), 'product_uom_qty': 2, 'price_unit': 40.0}),
+                (0, 0, {'product_id': ref('caffeine_discount.product_latte'), 'product_uom_qty': 1, 'price_unit': 55.0}),
+                (0, 0, {'product_id': ref('caffeine_discount.product_americano'), 'product_uom_qty': 3, 'price_unit': 35.0}),
+                (0, 0, {'product_id': ref('caffeine_discount.product_croissant'), 'product_uom_qty': 2, 'price_unit': 30.0})
+            ]"/>
+        </record>
+
+        <!-- Order 19 -->
+        <record id="order_019" model="sale.order">
+            <field name="client_id" ref="caffeine_discount.client_moroz_ivan"/>
+            <field name="barista_id" ref="caffeine_discount.barista_olena_lytvyn"/>
+            <field name="order_date">2024-11-29 16:30:00</field>
+            <field name="partner_id" ref="caffeine_discount.barista_olena_lytvyn"/>
+            <field name="order_line" eval="[
+                (0, 0, {'product_id': ref('caffeine_discount.product_cappuccino'), 'product_uom_qty': 1, 'price_unit': 50.0}),
+                (0, 0, {'product_id': ref('caffeine_discount.product_sandwich'), 'product_uom_qty': 3, 'price_unit': 45.0}),
+                (0, 0, {'product_id': ref('caffeine_discount.product_tea'), 'product_uom_qty': 2, 'price_unit': 25.0})
+            ]"/>
+        </record>
+
+        <!-- Order 20 -->
+        <record id="order_020" model="sale.order">
+            <field name="client_id" ref="caffeine_discount.client_zhuk_anna"/>
+            <field name="barista_id" ref="caffeine_discount.barista_andrii_petrovskiy"/>
+            <field name="order_date">2024-11-30 13:15:00</field>
+            <field name="partner_id" ref="caffeine_discount.barista_andrii_petrovskiy"/>
+            <field name="order_line" eval="[
+                (0, 0, {'product_id': ref('caffeine_discount.product_americano'), 'product_uom_qty': 3, 'price_unit': 35.0}),
+                (0, 0, {'product_id': ref('caffeine_discount.product_tea'), 'product_uom_qty': 1, 'price_unit': 25.0}),
+                (0, 0, {'product_id': ref('caffeine_discount.product_latte'), 'product_uom_qty': 2, 'price_unit': 55.0}),
+                (0, 0, {'product_id': ref('caffeine_discount.product_espresso'), 'product_uom_qty': 1, 'price_unit': 40.0}),
+                (0, 0, {'product_id': ref('caffeine_discount.product_croissant'), 'product_uom_qty': 2, 'price_unit': 30.0})
+            ]"/>
+        </record>
     </data>
 </odoo>

@@ -1,0 +1,90 @@
+<odoo>
+    <record id="caffeine_order_report_paperformat" model="report.paperformat">
+        <field name="name">Order Report A4</field>
+        <field name="format">A4</field>
+        <field name="margin_top">10</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">10</field>
+        <field name="margin_right">10</field>
+        <field name="header_line" eval="True"/>
+    </record>
+
+    <record id="caffeine_order_report" model="ir.actions.report">
+        <field name="name">Order Report</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">caffeine_discount.caffeine_order_report_template</field>
+        <field name="report_file">caffeine_discount.caffeine_order_report_template</field>
+        <field name="attachment"/>
+        <field name="binding_model_id" ref="model_sale_order"/>
+        <field name="paperformat_id" ref="caffeine_order_report_paperformat"/>
+    </record>
+
+    <template id="caffeine_order_report_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="header">
+                    <img t-att-src="'/caffeine_discount/static/img/icon.png'" alt="Company Logo" height="50"/>
+                </div>
+                <main>
+                    <t t-foreach="docs" t-as="doc">
+                        <div class="page">
+                            <div name="order_info" t-att-style="'font-size: 18px; padding: 5px;'">
+                                <strong>Order Receipt:</strong>
+                                <h2>
+                                    <t t-if="doc.client_id">
+                                        <strong>Client:</strong> <span t-field="doc.client_id.name"/>
+                                    </t>
+                                    <t t-if="doc.barista_id">
+                                        <strong>Barista:</strong> <span t-field="doc.barista_id.name"/>
+                                    </t>
+                                </h2>
+                                <h5>
+                                    <div><strong>Order Date:</strong> <span t-field="doc.order_date"/></div>
+                                </h5>
+                            </div>
+
+                            <div name="order_lines">
+                                <h4>Order Details:</h4>
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th>N</th>
+                                            <th>Product</th>
+                                            <th>Quantity</th>
+                                            <th>Unit Price</th>
+                                            <th>Subtotal</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr t-foreach="doc.order_line" t-as="line" t-enum="line_index">
+                                            <td><span t-esc="line_index + 1"/></td>
+                                            <td><span t-field="line.product_id.name"/></td>
+                                            <td><span t-field="line.product_uom_qty"/></td>
+                                            <td><span t-field="line.price_unit"/></td>
+                                            <td><span t-field="line.price_subtotal"/></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div name="total_amount">
+                                <h4>Total Amount:</h4>
+                                <div>
+                                    <strong>Amount:</strong> <span t-field="doc.amount_total"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                    <div name="grand_total">
+                        <h4>Grand Total of Selected Orders:</h4>
+                        <div>
+                            <strong>Grand Total:</strong> <span t-esc="'%.2f' % sum(docs.mapped('amount_total'))"/>
+                        </div>
+                    </div>
+                </main>
+            </t>
+        </t>
+    </template>
+
+</odoo>

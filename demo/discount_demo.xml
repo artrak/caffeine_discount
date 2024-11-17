@@ -1,19 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="demo_discount_10_percent" model="caffeine_discount.discount">
-        <field name="name">Znyzhka 10%</field>
-        <field name="discount_type">percentage</field>
-        <field name="value">10</field>
-        <field name="start_date">2024-01-01</field>
-        <field name="end_date">2024-12-31</field>
-        <field name="product_ids" eval="[(6, 0, [ref('demo_product_1'), ref('demo_product_2')])]"/>
-    </record>
-    <record id="demo_discount_fixed" model="caffeine_discount.discount">
-        <field name="name">-1 hrn na kruasan</field>
-        <field name="discount_type">fixed</field>
-        <field name="value">1</field>
-        <field name="start_date">2024-01-01</field>
-        <field name="end_date">2024-12-31</field>
-        <field name="product_ids" eval="[(6, 0, [ref('demo_product_3')])]"/>
-    </record>
+    <data noupdate="1">
+        <record id="discount_coffee_10_percent" model="caffeine_discount.discount">
+            <field name="name">10% знижка на каву</field>
+            <field name="discount_type">percentage</field>
+            <field name="value">10</field>
+            <field name="start_date">2024-11-11</field>
+            <field name="end_date">2024-12-31</field>
+            <field name="product_ids" eval="[(4, ref('product_cappuccino')), (4, ref('product_americano'))]"/>
+        </record>
+
+        <record id="discount_food_15_percent" model="caffeine_discount.discount">
+            <field name="name">15% знижка на їжу</field>
+            <field name="discount_type">percentage</field>
+            <field name="value">15</field>
+            <field name="start_date">2024-11-05</field>
+            <field name="end_date">2024-11-30</field>
+            <field name="product_ids" eval="[(4, ref('product_croissant')), (4, ref('product_sandwich'))]"/>
+        </record>
+
+        <record id="discount_tea_fixed_5" model="caffeine_discount.discount">
+            <field name="name">Фіксована знижка 5 грн на чай</field>
+            <field name="discount_type">fixed</field>
+            <field name="value">5</field>
+            <field name="start_date">2024-11-01</field>
+            <field name="end_date">2024-09-30</field>
+            <field name="product_ids" eval="[(4, ref('product_tea'))]"/>
+        </record>
+
+        <record id="discount_latte_20_percent" model="caffeine_discount.discount">
+            <field name="name">20% знижка на Латте</field>
+            <field name="discount_type">percentage</field>
+            <field name="value">20</field>
+            <field name="start_date">2024-12-01</field>
+            <field name="end_date">2024-08-31</field>
+            <field name="product_ids" eval="[(4, ref('product_latte'))]"/>
+        </record>
+    </data>
 </odoo>

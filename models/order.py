@@ -28,20 +28,6 @@ class SaleOrder(models.Model):
         default=lambda self: self.env.user.partner_id
     )
 
-    # amount_total = fields.Monetary(
-    #     string='Total Amount',
-    #     compute='_compute_amount_total',
-    #     store=True,
-    #     readonly=True,
-    #     currency_field='currency_id'
-    # )
-
-    @api.depends('order_line.price_subtotal')
-    def _compute_amount_total(self):
-        for order in self:
-            order.amount_total = sum(line.price_subtotal for line in order.order_line)
-
-
     @api.model
     def default_get(self, fields_list):
         # Отримуємо стандартні значення
@@ -63,17 +49,42 @@ class SaleOrder(models.Model):
             raise ValueError("The field 'Barista' is mandatory.")
         return super(SaleOrder, self).create(vals)
 
-    @api.depends('order_line.price_total')
-    def _compute_amount_total(self):
-        super(SaleOrder, self)._compute_amount_total()
-        for order in self:
-            discount_amount = 0
-            if order.discount_id:
-                if order.discount_id.discount_type == 'percentage':
-                    discount_amount = order.amount_untaxed * (order.discount_id.value / 100)
-                elif order.discount_id.discount_type == 'fixed':
-                    discount_amount = order.discount_id.value
-            order.amount_untaxed -= discount_amount
+    @api.onchange('barista_id')
+    def _onchange_barista_id(self):
+        """
+        On change of barista_id, update partner_id with the selected img's partner.
+        """
+        if self.barista_id and self.barista_id.partner_id:
+            self.partner_id = self.barista_id.partner_id
 
     def print_receipt(self):
         return self.env.ref('caffeine_discount.report_sale_order_receipt').report_action(self)
+
+    @api.depends('order_line.price_subtotal', 'order_line.price_total',
+                 'discount_id')
+    def _compute_amount_total(self):
+        for order in self:
+            # Обчислення базової суми без податків
+            amount_untaxed = sum(
+                line.price_subtotal for line in order.order_line)
+            amount_tax = sum(line.price_tax for line in order.order_line)
+
+            # Обчислення суми з урахуванням знижки
+            discount_amount = 0
+            if order.discount_id:
+                if order.discount_id.discount_type == 'percentage':
+                    discount_amount = amount_untaxed * (
+                                order.discount_id.value / 100)
+                elif order.discount_id.discount_type == 'fixed':
+                    discount_amount = order.discount_id.value
+
+            # Застосування знижки
+            amount_untaxed -= discount_amount
+
+            # Присвоєння значень полям
+            order.update({
+                'amount_untaxed': amount_untaxed,
+                'amount_tax': amount_tax,
+                'amount_total': amount_untaxed + amount_tax,
+            })
+

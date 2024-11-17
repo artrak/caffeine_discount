@@ -31,37 +31,62 @@ class SaleOrderLine(models.Model):
         readonly=True
     )
 
-    # named_discount = fields.Float(
-    #     string="Named Discount",
-    #     compute='_compute_named_discount',
-    #     store=True,
-    # )
+    named_discount = fields.Float(
+        string="Named Discount",
+        compute='_compute_named_discount',
+        store=True
+    )
 
-    # @api.depends('order_id.partner_id.total_order_amount')
-    # def _compute_named_discount(self):
-    #     """
-    #     Розрахунок іменної знижки залежно від `Total Order Amount`.
-    #     """
-    #     for line in self:
-    #         total_order_amount = line.order_id.partner_id.total_order_amount
-    #         if total_order_amount >= 100:
-    #             line.named_discount = 10.0
-    #         elif total_order_amount >= 50:
-    #             line.named_discount = 7.0
-    #         elif total_order_amount >= 20:
-    #             line.named_discount = 4.0
-    #         elif total_order_amount >= 10:
-    #             line.named_discount = 3.0
-    #         elif total_order_amount >= 5:
-    #             line.named_discount = 2.0
-    #         elif total_order_amount >= 1:
-    #             line.named_discount = 1.0
-    #         else:
-    #             line.named_discount = 0.0
+    @api.depends('order_id.partner_id.total_order_amount')
+    def _compute_named_discount(self):
+        """Compute named discount based on the client's total order amount."""
+        for line in self:
+            if line.order_id.partner_id and hasattr(line.order_id.partner_id,
+                                                    'total_order_amount'):
+                total_order_amount = line.order_id.partner_id.total_order_amount
+                if total_order_amount >= 100:
+                    line.named_discount = 10.0
+                elif total_order_amount >= 50:
+                    line.named_discount = 7.0
+                elif total_order_amount >= 20:
+                    line.named_discount = 4.0
+                elif total_order_amount >= 10:
+                    line.named_discount = 3.0
+                elif total_order_amount >= 5:
+                    line.named_discount = 2.0
+                elif total_order_amount >= 1:
+                    line.named_discount = 1.0
+                else:
+                    line.named_discount = 0.0
+            else:
+                line.named_discount = 0.0
 
     @api.onchange('product_id', 'product_uom_qty')
     def _onchange_product_id(self):
         self._compute_best_discount()
+
+    @api.depends('product_uom_qty', 'price_unit', 'discount_id',
+                 'named_discount')
+    def _compute_amount(self):
+        super(SaleOrderLine, self)._compute_amount()
+        for line in self:
+            discount_amount = 0
+            # Check if the product has active discount
+            if line.discount_id and line.discount_id.is_active:
+                if line.discount_id.discount_type == 'percentage':
+                    discount_amount = line.price_unit * (
+                                line.discount_id.value / 100)
+                elif line.discount_id.discount_type == 'fixed':
+                    discount_amount = line.discount_id.value
+
+            # Compare with named discount
+            named_discount_amount = line.price_unit * (
+                        line.named_discount / 100)
+            if named_discount_amount > discount_amount:
+                discount_amount = named_discount_amount
+
+            line.price_subtotal = line.product_uom_qty * (
+                        line.price_unit - discount_amount)
 
     @api.depends('product_id', 'product_uom_qty', 'price_unit')
     def _compute_best_discount(self):

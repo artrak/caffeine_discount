@@ -18,8 +18,8 @@
 
 /* Стилі фото */
 .oe_avatar_form {
-    width: auto !important; /* Ширина фото */
-    height: auto !important; /* Висота фото */
+    width: 250px; /* Ширина фото */
+    height: 400px; /* Висота фото */
     object-fit: contain; /* Пропорційне масштабування */
 }
 

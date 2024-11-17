@@ -1,21 +1,67 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="demo_product_1" model="caffeine_discount.product">
-        <field name="name">Espreso</field>
-        <field name="category">coffee</field>
-        <field name="lst_price">3.50</field>
-        <field name="stock">50</field>
-    </record>
-    <record id="demo_product_2" model="caffeine_discount.product">
-        <field name="name">Latte</field>
-        <field name="category">coffee</field>
-        <field name="lst_price">4.50</field>
-        <field name="stock">30</field>
-    </record>
-    <record id="demo_product_3" model="caffeine_discount.product">
-        <field name="name">Kruasan</field>
-        <field name="category">food</field>
-        <field name="lst_price">2.00</field>
-        <field name="stock">20</field>
-    </record>
+    <data noupdate="1">
+        <record id="product_cappuccino" model="product.product">
+            <field name="name">Капучино</field>
+            <field name="category">coffee</field>
+            <field name="list_price">50.00</field>
+            <field name="stock">100</field>
+            <field name="image_1920" type="base64"
+                   file="caffeine_discount/static/img/cappuccino.jpg"
+            />
+        </record>
+        <record id="product_latte" model="product.product">
+            <field name="name">Латте</field>
+            <field name="category">coffee</field>
+            <field name="list_price">55.00</field>
+            <field name="stock">80</field>
+            <field name="image_1920" type="base64"
+                   file="caffeine_discount/static/img/latte.jpg"
+            />
+        </record>
+        <record id="product_espresso" model="product.product">
+            <field name="name">Еспресо</field>
+            <field name="category">coffee</field>
+            <field name="list_price">40.00</field>
+            <field name="stock">120</field>
+            <field name="image_1920" type="base64"
+                   file="caffeine_discount/static/img/espresoo.jpg"
+            />
+        </record>
+        <record id="product_croissant" model="product.product">
+            <field name="name">Круасан</field>
+            <field name="category">food</field>
+            <field name="list_price">30.00</field>
+            <field name="stock">60</field>
+            <field name="image_1920" type="base64"
+                   file="caffeine_discount/static/img/cruasan.jpg"
+            />
+        </record>
+        <record id="product_tea" model="product.product">
+            <field name="name">Чай</field>
+            <field name="category">drink</field>
+            <field name="list_price">25.00</field>
+            <field name="stock">150</field>
+            <field name="image_1920" type="base64"
+                   file="caffeine_discount/static/img/tea.jpg"
+            />
+        </record>
+        <record id="product_sandwich" model="product.product">
+            <field name="name">Сендвіч</field>
+            <field name="category">food</field>
+            <field name="list_price">45.00</field>
+            <field name="stock">70</field>
+            <field name="image_1920" type="base64"
+                   file="caffeine_discount/static/img/sendvich.jpg"
+            />
+        </record>
+        <record id="product_americano" model="product.product">
+            <field name="name">Американо</field>
+            <field name="category">coffee</field>
+            <field name="list_price">35.00</field>
+            <field name="stock">100</field>
+            <field name="image_1920" type="base64"
+                   file="caffeine_discount/static/img/americano.jpg"
+            />
+        </record>
+    </data>
 </odoo>

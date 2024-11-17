@@ -1,23 +1,285 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="demo_client_1" model="caffeine_discount.client">
-        <field name="first_name">Oleksandr</field>
-        <field name="last_name">Shevchenko</field>
-        <field name="phone">+380501234567</field>
-        <field name="email">oleksandr.shevchenko@example.com</field>
-        <field name="address">vul. Shevchenka, 12, Kyiv</field>
-        <field name="gender">male</field>
-        <field name="birth_date">1990-01-01</field>
-        <field name="loyalty_points">100</field>
-    </record>
-    <record id="demo_client_2" model="caffeine_discount.client">
-        <field name="first_name">Olena</field>
-        <field name="last_name">Kovalchuk</field>
-        <field name="phone">+380671234567</field>
-        <field name="email">olena.kovalchuk@example.com</field>
-        <field name="address">vul. Lesi Ukrainky, 18, Lviv</field>
-        <field name="gender">female</field>
-        <field name="birth_date">1985-05-15</field>
-        <field name="loyalty_points">150</field>
-    </record>
+    <data noupdate="1">
+        <record id="client_ivanov_oleksandr" model="caffeine_discount.client">
+            <field name="name">Олександр Іванов</field>
+            <field name="gender">male</field>
+            <field name="birth_date">1985-02-15</field>
+            <field name="phone">+380671234567</field>
+            <field name="email">ivanov_oleksandr@example.com</field>
+            <field name="address">вул. Іванова, 10, Київ</field>
+            <field name="loyalty_points">10</field>
+            <field name="photo" type="base64"
+                   file="caffeine_discount/static/img/client2.webp"
+            />
+        </record>
+        <record id="client_shevchenko_olena" model="caffeine_discount.client">
+            <field name="name">Олена Шевченко</field>
+            <field name="gender">female</field>
+            <field name="birth_date">1990-04-10</field>
+            <field name="phone">+380672345678</field>
+            <field name="email">shevchenko_olena@example.com</field>
+            <field name="address">вул. Шевченка, 15, Львів</field>
+            <field name="loyalty_points">20</field>
+            <field name="photo" type="base64"
+                   file="caffeine_discount/static/img/client1.webp"
+            />
+        </record>
+        <record id="client_sidorenko_andrii" model="caffeine_discount.client">
+            <field name="name">Андрій Сидоренко</field>
+            <field name="gender">male</field>
+            <field name="birth_date">1988-07-20</field>
+            <field name="phone">+380673456789</field>
+            <field name="email">sidorenko_andrii@example.com</field>
+            <field name="address">вул. Сидорова, 5, Одеса</field>
+            <field name="loyalty_points">30</field>
+            <field name="photo" type="base64"
+                   file="caffeine_discount/static/img/client3.webp"
+            />
+        </record>
+        <record id="client_kovalenko_iryna" model="caffeine_discount.client">
+            <field name="name">Ірина Коваленко</field>
+            <field name="gender">female</field>
+            <field name="birth_date">1992-11-30</field>
+            <field name="phone">+380674567890</field>
+            <field name="email">kovalenko_iryna@example.com</field>
+            <field name="address">вул. Коваленко, 25, Харків</field>
+            <field name="loyalty_points">40</field>
+            <field name="photo" type="base64"
+                   file="caffeine_discount/static/img/client4.webp"
+            />
+        </record>
+        <record id="client_shevchenko_volodymyr" model="caffeine_discount.client">
+            <field name="name">Володимир Шевченко</field>
+            <field name="gender">male</field>
+            <field name="birth_date">1980-06-05</field>
+            <field name="phone">+380675678901</field>
+            <field name="email">shevchenko_volodymyr@example.com</field>
+            <field name="address">вул. Шевченка, 1, Київ</field>
+            <field name="loyalty_points">50</field>
+            <field name="photo" type="base64"
+                   file="caffeine_discount/static/img/client3.webp"
+            />
+        </record>
+        <record id="client_zhuk_anna" model="caffeine_discount.client">
+            <field name="name">Анна Жук</field>
+            <field name="gender">female</field>
+            <field name="birth_date">1995-03-15</field>
+            <field name="phone">+380676789012</field>
+            <field name="email">zhuk_anna@example.com</field>
+            <field name="address">вул. Жукова, 12, Дніпро</field>
+            <field name="loyalty_points">15</field>
+            <field name="photo" type="base64" file="caffeine_discount/static/img/client1.webp"/>
+        </record>
+        <record id="client_bondar_dmytro" model="caffeine_discount.client">
+            <field name="name">Дмитро Бондар</field>
+            <field name="gender">male</field>
+            <field name="birth_date">1983-12-25</field>
+            <field name="phone">+380678901234</field>
+            <field name="email">bondar_dmytro@example.com</field>
+            <field name="address">вул. Бондаря, 8, Полтава</field>
+            <field name="loyalty_points">35</field>
+            <field name="photo" type="base64" file="caffeine_discount/static/img/client2.webp"/>
+        </record>
+        <record id="client_petrova_lyudmyla" model="caffeine_discount.client">
+            <field name="name">Людмила Петрова</field>
+            <field name="gender">female</field>
+            <field name="birth_date">1998-05-22</field>
+            <field name="phone">+380671234890</field>
+            <field name="email">petrova_lyudmyla@example.com</field>
+            <field name="address">вул. Петрова, 20, Запоріжжя</field>
+            <field name="loyalty_points">25</field>
+            <field name="photo" type="base64" file="caffeine_discount/static/img/client5.webp"/>
+        </record>
+        <record id="client_vasylenko_oleh" model="caffeine_discount.client">
+            <field name="name">Олег Василенко</field>
+            <field name="gender">male</field>
+            <field name="birth_date">1979-08-14</field>
+            <field name="phone">+380679876543</field>
+            <field name="email">vasylenko_oleh@example.com</field>
+            <field name="address">вул. Василенка, 3, Чернігів</field>
+            <field name="loyalty_points">60</field>
+            <field name="photo" type="base64" file="caffeine_discount/static/img/client2.webp"/>
+        </record>
+        <record id="client_moroz_ivan" model="caffeine_discount.client">
+            <field name="name">Іван Мороз</field>
+            <field name="gender">male</field>
+            <field name="birth_date">1991-01-12</field>
+            <field name="phone">+380671111111</field>
+            <field name="email">moroz_ivan@example.com</field>
+            <field name="address">вул. Мороза, 3, Львів</field>
+            <field name="loyalty_points">15</field>
+            <field name="photo" type="base64" file="caffeine_discount/static/img/client4.webp"/>
+        </record>
+        <record id="client_bilous_maryna" model="caffeine_discount.client">
+            <field name="name">Марина Білоус</field>
+            <field name="gender">female</field>
+            <field name="birth_date">1987-09-18</field>
+            <field name="phone">+380672222222</field>
+            <field name="email">bilous_maryna@example.com</field>
+            <field name="address">вул. Білоуса, 12, Харків</field>
+            <field name="loyalty_points">20</field>
+            <field name="photo" type="base64" file="caffeine_discount/static/img/client4.webp"/>
+        </record>
+        <record id="client_krivonogov_oleh" model="caffeine_discount.client">
+            <field name="name">Олег Кривоногов</field>
+            <field name="gender">male</field>
+            <field name="birth_date">1993-03-22</field>
+            <field name="phone">+380673333333</field>
+            <field name="email">krivonogov_oleh@example.com</field>
+            <field name="address">вул. Кривоногова, 5, Одеса</field>
+            <field name="loyalty_points">25</field>
+            <field name="photo" type="base64" file="caffeine_discount/static/img/client3.webp"/>
+        </record>
+        <record id="client_tarasova_anastasiia" model="caffeine_discount.client">
+            <field name="name">Анастасія Тарасова</field>
+            <field name="gender">female</field>
+            <field name="birth_date">1996-11-14</field>
+            <field name="phone">+380674444444</field>
+            <field name="email">tarasova_anastasiia@example.com</field>
+            <field name="address">вул. Тарасова, 7, Запоріжжя</field>
+            <field name="loyalty_points">35</field>
+            <field name="photo" type="base64" file="caffeine_discount/static/img/client4.webp"/>
+        </record>
+        <record id="client_klymenko_mykhailo" model="caffeine_discount.client">
+            <field name="name">Михайло Клименко</field>
+            <field name="gender">male</field>
+            <field name="birth_date">1980-02-10</field>
+            <field name="phone">+380675555555</field>
+            <field name="email">klymenko_mykhailo@example.com</field>
+            <field name="address">вул. Клименка, 8, Київ</field>
+            <field name="loyalty_points">45</field>
+            <field name="photo" type="base64" file="caffeine_discount/static/img/client5.webp"/>
+        </record>
+        <record id="client_horoshko_nataliia" model="caffeine_discount.client">
+            <field name="name">Наталія Хорошко</field>
+            <field name="gender">female</field>
+            <field name="birth_date">1994-08-27</field>
+            <field name="phone">+380676666666</field>
+            <field name="email">horoshko_nataliia@example.com</field>
+            <field name="address">вул. Хорошка, 10, Дніпро</field>
+            <field name="loyalty_points">50</field>
+            <field name="photo" type="base64" file="caffeine_discount/static/img/client1.webp"/>
+        </record>
+        <record id="client_rudenko_artem" model="caffeine_discount.client">
+            <field name="name">Артем Руденко</field>
+            <field name="gender">male</field>
+            <field name="birth_date">1999-12-05</field>
+            <field name="phone">+380677777777</field>
+            <field name="email">rudenko_artem@example.com</field>
+            <field name="address">вул. Руденка, 15, Полтава</field>
+            <field name="loyalty_points">55</field>
+            <field name="photo" type="base64" file="caffeine_discount/static/img/client2.webp"/>
+        </record>
+        <record id="client_bondarenko_iryna" model="caffeine_discount.client">
+            <field name="name">Ірина Бондаренко</field>
+            <field name="gender">female</field>
+            <field name="birth_date">1985-07-01</field>
+            <field name="phone">+380678888888</field>
+            <field name="email">bondarenko_iryna@example.com</field>
+            <field name="address">вул. Бондаренко, 25, Черкаси</field>
+            <field name="loyalty_points">60</field>
+            <field name="photo" type="base64" file="caffeine_discount/static/img/client3.webp"/>
+        </record>
+        <record id="client_kovalenko_ivan" model="caffeine_discount.client">
+            <field name="name">Іван Коваленко</field>
+            <field name="gender">male</field>
+            <field name="birth_date">1982-03-15</field>
+            <field name="phone">+380671000000</field>
+            <field name="email">kovalenko_ivan@example.com</field>
+            <field name="address">вул. Коваленко, 1, Харків</field>
+            <field name="loyalty_points">12</field>
+            <field name="photo" type="base64" file="caffeine_discount/static/img/client4.webp"/>
+        </record>
+        <record id="client_lisova_kateryna" model="caffeine_discount.client">
+            <field name="name">Катерина Лісова</field>
+            <field name="gender">female</field>
+            <field name="birth_date">1991-06-22</field>
+            <field name="phone">+380672111111</field>
+            <field name="email">lisova_kateryna@example.com</field>
+            <field name="address">вул. Лісова, 9, Львів</field>
+            <field name="loyalty_points">18</field>
+            <field name="photo" type="base64" file="caffeine_discount/static/img/client1.webp"/>
+        </record>
+        <record id="client_havryliuk_oleh" model="caffeine_discount.client">
+            <field name="name">Олег Гаврилюк</field>
+            <field name="gender">male</field>
+            <field name="birth_date">1989-09-11</field>
+            <field name="phone">+380673222222</field>
+            <field name="email">havryliuk_oleh@example.com</field>
+            <field name="address">вул. Гаврилюка, 14, Одеса</field>
+            <field name="loyalty_points">25</field>
+            <field name="photo" type="base64" file="caffeine_discount/static/img/client2.webp"/>
+        </record>
+        <record id="client_pavlenko_nataliia" model="caffeine_discount.client">
+            <field name="name">Наталія Павленко</field>
+            <field name="gender">female</field>
+            <field name="birth_date">1995-01-29</field>
+            <field name="phone">+380674333333</field>
+            <field name="email">pavlenko_nataliia@example.com</field>
+            <field name="address">вул. Павленко, 5, Запоріжжя</field>
+            <field name="loyalty_points">35</field>
+            <field name="photo" type="base64" file="caffeine_discount/static/img/client5.webp"/>
+        </record>
+        <record id="client_petrova_daria" model="caffeine_discount.client">
+            <field name="name">Дарія Петрова</field>
+            <field name="gender">female</field>
+            <field name="birth_date">1997-07-07</field>
+            <field name="phone">+380675444444</field>
+            <field name="email">petrova_daria@example.com</field>
+            <field name="address">вул. Петрова, 22, Київ</field>
+            <field name="loyalty_points">40</field>
+            <field name="photo" type="base64" file="caffeine_discount/static/img/client4.webp"/>
+        </record>
+        <record id="client_tymoshchuk_serhii" model="caffeine_discount.client">
+            <field name="name">Сергій Тимощук</field>
+            <field name="gender">male</field>
+            <field name="birth_date">1984-04-18</field>
+            <field name="phone">+380676555555</field>
+            <field name="email">tymoshchuk_serhii@example.com</field>
+            <field name="address">вул. Тимощука, 18, Полтава</field>
+            <field name="loyalty_points">45</field>
+            <field name="photo" type="base64" file="caffeine_discount/static/img/client3.webp"/>
+        </record>
+        <record id="client_pereverzieva_olha" model="caffeine_discount.client">
+            <field name="name">Ольга Переверзєва</field>
+            <field name="gender">female</field>
+            <field name="birth_date">1986-02-25</field>
+            <field name="phone">+380677666666</field>
+            <field name="email">pereverzieva_olha@example.com</field>
+            <field name="address">вул. Переверзєва, 3, Дніпро</field>
+            <field name="loyalty_points">50</field>
+            <field name="photo" type="base64" file="caffeine_discount/static/img/client1.webp"/>
+        </record>
+        <record id="client_vovk_anton" model="caffeine_discount.client">
+            <field name="name">Антон Вовк</field>
+            <field name="gender">male</field>
+            <field name="birth_date">1993-05-30</field>
+            <field name="phone">+380678777777</field>
+            <field name="email">vovk_anton@example.com</field>
+            <field name="address">вул. Вовка, 7, Черкаси</field>
+            <field name="loyalty_points">55</field>
+            <field name="photo" type="base64" file="caffeine_discount/static/img/client2.webp"/>
+        </record>
+        <record id="client_ivanenko_mariia" model="caffeine_discount.client">
+            <field name="name">Марія Іваненко</field>
+            <field name="gender">female</field>
+            <field name="birth_date">1987-10-10</field>
+            <field name="phone">+380679888888</field>
+            <field name="email">ivanenko_mariia@example.com</field>
+            <field name="address">вул. Іваненко, 12, Чернігів</field>
+            <field name="loyalty_points">60</field>
+            <field name="photo" type="base64" file="caffeine_discount/static/img/client5.webp"/>
+        </record>
+        <record id="client_lytvynov_vasyl" model="caffeine_discount.client">
+            <field name="name">Василь Литвинов</field>
+            <field name="gender">male</field>
+            <field name="birth_date">1981-08-03</field>
+            <field name="phone">+380671999999</field>
+            <field name="email">lytvynov_vasyl@example.com</field>
+            <field name="address">вул. Литвинова, 15, Харків</field>
+            <field name="loyalty_points">65</field>
+            <field name="photo" type="base64" file="caffeine_discount/static/img/client3.webp"/>
+        </record>
+    </data>
 </odoo>

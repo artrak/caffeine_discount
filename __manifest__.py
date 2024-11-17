@@ -36,11 +36,11 @@
     ],
 
     'demo': [
-        # 'demo/client_demo.xml',
-        # 'demo/barista_demo.xml',
-        # 'demo/product_demo.xml',
-        # 'demo/discount_demo.xml',
-        # 'demo/order_demo.xml',
+        'demo/client_demo.xml',
+        'demo/barista_demo.xml',
+        'demo/product_demo.xml',
+        'demo/discount_demo.xml',
+        'demo/order_demo.xml',
     ],
 
     'assets': {

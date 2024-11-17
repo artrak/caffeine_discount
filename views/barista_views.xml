@@ -73,22 +73,67 @@
             </field>
         </record>
 
-<!--        <record id="view_barista_tree" model="ir.ui.view">-->
-<!--            <field name="name">caffeine_discount.barista.tree</field>-->
-<!--            <field name="model">caffeine_discount.barista</field>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <tree string="Baristas">-->
-<!--                    <field name="name"/>-->
-<!--                    <field name="phone"/>-->
-<!--                    <field name="shift"/>-->
-<!--                </tree>-->
-<!--            </field>-->
-<!--        </record>-->
+         <record id="view_barista_tree" model="ir.ui.view">
+            <field name="name">caffeine_discount.barista.tree</field>
+            <field name="model">caffeine_discount.barista</field>
+            <field name="arch" type="xml">
+                <tree string="Baristas">
+                    <field name="name"/>
+                    <field name="shift"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                    <field name="total_order_amount" readonly="1"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+        <!-- Graph View for Barista -->
+        <record id="view_barista_graph" model="ir.ui.view">
+            <field name="name">caffeine_discount.barista.graph</field>
+            <field name="model">caffeine_discount.barista</field>
+            <field name="arch" type="xml">
+                <graph string="Barista Performance" type="bar">
+                    <field name="name" type="row"/>
+                    <field name="total_order_amount" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <!-- Pivot View for Barista -->
+        <record id="view_barista_pivot" model="ir.ui.view">
+            <field name="name">caffeine_discount.barista.pivot</field>
+            <field name="model">caffeine_discount.barista</field>
+            <field name="arch" type="xml">
+                <pivot string="Barista Performance">
+                    <field name="name" type="row"/>
+                    <field name="shift" type="row"/>
+                    <field name="total_order_amount" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+        <!-- Action to Open Pivot View -->
+        <record id="action_barista_pivot" model="ir.actions.act_window">
+            <field name="name">Barista Analysis</field>
+            <field name="res_model">caffeine_discount.barista</field>
+            <field name="view_mode">pivot</field>
+            <field name="view_id" ref="view_barista_pivot"/>
+        </record>
+
+        <!-- Action to Open Graph View -->
+        <record id="action_barista_graph" model="ir.actions.act_window">
+            <field name="name">Barista Performance</field>
+            <field name="res_model">caffeine_discount.barista</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="view_barista_graph"/>
+        </record>
 
         <record id="action_caffeine_discount_barista" model="ir.actions.act_window">
             <field name="name">Baristas</field>
             <field name="res_model">caffeine_discount.barista</field>
-            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_mode">kanban,tree,form,graph,pivot</field>
         </record>
     </data>
 </odoo>

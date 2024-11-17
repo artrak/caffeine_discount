@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Дія для Orders -->
-<!--    <record id="action_caffeine_discount_order" model="ir.actions.act_window">-->
-<!--        <field name="name">Orders</field>-->
-<!--        <field name="res_model">sale.order</field>-->
-<!--        <field name="view_mode">tree,form</field>-->
-<!--        <field name="view_id" ref="view_order_tree"/>-->
-<!--        <field name="target">current</field>-->
-<!--    </record>-->
-
     <!-- Root menu item for the Caffeine Discount module -->
     <menuitem id="menu_caffeine_discount_root" name="Caffeine Discount" sequence="1" />
 
@@ -46,5 +37,4 @@
               parent="menu_caffeine_discount_root"
               sequence="50"
               action="action_caffeine_discount_discount" />
-
 </odoo>

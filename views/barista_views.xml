@@ -48,7 +48,7 @@
                                     <field name="gender"/>
                                     <field name="shift"/>
                                     <field name="total_order_amount" readonly="1"/>
-                                </group>
+                                </group>замість
                             </div>
                             <div class="form_right_section">
                                 <field name="photo"

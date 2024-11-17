@@ -1,11 +1,2 @@
-from . import (
-    res_partner,
-    person_mixin,
-    client,
-    barista,
-    res_partner_discount,
-    product,
-    discount,
-    order,
-    order_line,
-)
+from . import (person_mixin, barista, client, discount, order, order_line,
+               product, res_partner, res_partner_discount)

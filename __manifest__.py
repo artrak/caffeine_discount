@@ -1,7 +1,11 @@
 {
     'name': 'Caffeine Discount',
     'version': '17.0.1.0.0',
-    'summary': 'Caffeine Discount is a loyalty and discount management module for coffee shops. It allows customers to earn rewards, manage discounts, and benefit from personalized loyalty programs to enhance their experience.',
+    'summary': (
+        'Caffeine Discount is a loyalty and discount management module for coffee '
+        'shops. It allows customers to earn rewards, manage discounts, and benefit '
+        'from personalized loyalty programs to enhance their experience.'
+    ),
     'category': 'Sales',
     'author': 'Artemius-K',
     'website': 'https://github.com/artrak/caffeine_discount.git',
@@ -47,7 +51,6 @@
         'demo/discount_demo.xml',
         'demo/order_demo.xml',
     ],
-
     'assets': {
         'web.assets_backend': [
             '/caffeine_discount/static/src/css/style.css',  # Шлях до вашого CSS

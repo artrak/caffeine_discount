@@ -1,0 +1,620 @@
+# Переклад серверу Odoo.
+# Цей файл містить переклад наступних модулів:
+# 	* caffeine_discount
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-17 20:41+0000\n"
+"PO-Revision-Date: 2024-11-17 20:41+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.caffeine_order_report_template
+msgid "<strong>Amount:</strong>"
+msgstr "<strong>Сума:</strong>"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.caffeine_order_report_template
+msgid "<strong>Barista:</strong>"
+msgstr "<strong>Бариста:</strong>"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.caffeine_order_report_template
+msgid "<strong>Client:</strong>"
+msgstr "<strong>Клієнт:</strong>"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.caffeine_order_report_template
+msgid "<strong>Grand Total:</strong>"
+msgstr "<strong>Загальна сума:</strong>"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.caffeine_order_report_template
+msgid "<strong>Order Date:</strong>"
+msgstr "<strong>Дата замовлення:</strong>"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.caffeine_order_report_template
+msgid "<strong>Order Receipt:</strong>"
+msgstr "<strong>Квитанція замовлення:</strong>"
+
+#. module: caffeine_discount
+#: model:ir.model,name:caffeine_discount.model_caffeine_discount_person_mixin
+msgid "Abstract Model for Person"
+msgstr "Абстрактна модель для особи"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_discount__is_active
+msgid "Active"
+msgstr "Активний"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_client__address
+msgid "Address"
+msgstr "Адреса"
+
+#. module: caffeine_discount
+#: model:ir.model.fields.selection,name:caffeine_discount.selection__caffeine_discount_barista__shift__afternoon
+msgid "Afternoon"
+msgstr "Після обіду"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_barista__age
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_client__age
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_person_mixin__age
+msgid "Age"
+msgstr "Вік"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_discount__product_ids
+msgid "Applicable Products"
+msgstr "Застосовні продукти"
+
+#. module: caffeine_discount
+#: model:ir.model,name:caffeine_discount.model_caffeine_discount_barista
+#: model:ir.model.fields,field_description:caffeine_discount.field_sale_order__barista_id
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_barista_form
+msgid "Barista"
+msgstr "Бариста"
+
+#. module: caffeine_discount
+#: model:ir.actions.act_window,name:caffeine_discount.action_barista_pivot
+msgid "Barista Analysis"
+msgstr "Аналіз бариста"
+
+#. module: caffeine_discount
+#: model:ir.actions.act_window,name:caffeine_discount.action_barista_graph
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_barista_graph
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_barista_pivot
+msgid "Barista Performance"
+msgstr "Результативність бариста"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_barista_form
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_barista_kanban
+msgid "Barista Photo"
+msgstr "Фото бариста"
+
+#. module: caffeine_discount
+#: model:ir.actions.act_window,name:caffeine_discount.action_caffeine_discount_barista
+#: model:ir.ui.menu,name:caffeine_discount.menu_caffeine_discount_barista
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_barista_kanban
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_barista_tree
+msgid "Baristas"
+msgstr "Бариста"
+
+#. module: caffeine_discount
+#: model:ir.ui.menu,name:caffeine_discount.menu_caffeine_discount_root
+msgid "Caffeine Discount"
+msgstr "Знижка на каву"
+
+#. module: caffeine_discount
+#: model:ir.actions.act_window,name:caffeine_discount.action_caffeine_discount_order
+msgid "Caffeine Discount Orders"
+msgstr "Замовлення зі знижкою на каву"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_update_discount_dates_wizard_form
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_product_product__category
+#: model:ir.model.fields,field_description:caffeine_discount.field_product_product__category_id
+msgid "Category"
+msgstr "Категорія"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_discount_tree
+msgid "Change discount date"
+msgstr "Змінити дату знижки"
+
+
+#. module: caffeine_discount
+#: model:ir.model,name:caffeine_discount.model_caffeine_discount_client
+#: model:ir.model.fields,field_description:caffeine_discount.field_sale_order__client_id
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_client_form
+msgid "Client"
+msgstr "Клієнт"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_client_form
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_client_kanban
+msgid "Client Photo"
+msgstr "Фото клієнта"
+
+#. module: caffeine_discount
+#: model:ir.actions.act_window,name:caffeine_discount.action_caffeine_discount_client
+#: model:ir.ui.menu,name:caffeine_discount.menu_caffeine_discount_client
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_client_kanban
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_client_tree
+msgid "Clients"
+msgstr "Клієнти"
+
+#. module: caffeine_discount
+#: model:ir.model.fields.selection,name:caffeine_discount.selection__product_product__category__coffee
+msgid "Coffee"
+msgstr "Кава"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.caffeine_order_report_template
+msgid "Company Logo"
+msgstr "Логотип компанії"
+
+#. module: caffeine_discount
+#: model:ir.model,name:caffeine_discount.model_res_partner
+msgid "Contact"
+msgstr "Контакт"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_barista__create_uid
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_client__create_uid
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_discount__create_uid
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_update_dates_wizard__create_uid
+msgid "Created by"
+msgstr "Створено"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_barista__create_date
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_client__create_date
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_discount__create_date
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_update_dates_wizard__create_date
+msgid "Created on"
+msgstr "Дата створення"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_sale_order__partner_id
+msgid "Customer"
+msgstr "Замовник"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_barista__birth_date
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_client__birth_date
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_person_mixin__birth_date
+msgid "Date of Birth"
+msgstr "Дата народження"
+
+#. module: caffeine_discount
+#: model:ir.model,name:caffeine_discount.model_caffeine_discount_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_sale_order_line__discount_id
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_discount_form
+msgid "Discount"
+msgstr "Знижка"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_discount_calendar
+msgid "Discount Calendar"
+msgstr "Календар знижок"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_discount__name
+msgid "Discount Name"
+msgstr "Назва знижки"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_barista__discount_type
+#: model:ir.model.fields,field_description:caffeine_discount.field_res_partner__discount_type
+#: model:ir.model.fields,field_description:caffeine_discount.field_res_users__discount_type
+msgid "Discount Type"
+msgstr "Тип знижки"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_res_partner__discount_value
+#: model:ir.model.fields,field_description:caffeine_discount.field_res_users__discount_value
+#: model:ir.model.fields,field_description:caffeine_discount.field_sale_order_line__discount_value
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_order_form
+msgid "Discount Value"
+msgstr "Значення знижки"
+
+#. module: caffeine_discount
+#: model:ir.actions.act_window,name:caffeine_discount.action_caffeine_discount_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_product_product__discount_ids
+#: model:ir.ui.menu,name:caffeine_discount.menu_caffeine_discount_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_discount_tree
+msgid "Discounts"
+msgstr "Знижки"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_barista__display_name
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_client__display_name
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_discount__display_name
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_update_dates_wizard__display_name
+msgid "Display Name"
+msgstr "Відображуване ім'я"
+
+#. module: caffeine_discount
+#: model:ir.model.fields.selection,name:caffeine_discount.selection__product_product__category__drink
+msgid "Drink"
+msgstr "Напій"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_barista__email
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_client__email
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_person_mixin__email
+msgid "Email"
+msgstr "Електронна пошта"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_discount__end_date
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_update_dates_wizard__end_date
+msgid "End Date"
+msgstr "Дата закінчення"
+
+#. module: caffeine_discount
+#: model:ir.model.fields.selection,name:caffeine_discount.selection__caffeine_discount_barista__shift__evening
+msgid "Evening"
+msgstr "Вечір"
+
+#. module: caffeine_discount
+#: model:ir.model.fields.selection,name:caffeine_discount.selection__caffeine_discount_barista__gender__female
+#: model:ir.model.fields.selection,name:caffeine_discount.selection__caffeine_discount_client__gender__female
+#: model:ir.model.fields.selection,name:caffeine_discount.selection__caffeine_discount_person_mixin__gender__female
+msgid "Female"
+msgstr "Жіноча"
+
+#. module: caffeine_discount
+#: model:ir.model.fields.selection,name:caffeine_discount.selection__caffeine_discount_discount__discount_type__fixed
+#: model:ir.model.fields.selection,name:caffeine_discount.selection__res_partner__discount_type__fixed
+msgid "Fixed Amount"
+msgstr "Фіксована сума"
+
+#. module: caffeine_discount
+#: model:ir.model.fields.selection,name:caffeine_discount.selection__product_product__category__food
+msgid "Food"
+msgstr "Їжа"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_barista__gender
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_client__gender
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_person_mixin__gender
+msgid "Gender"
+msgstr "Стать"
+
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.caffeine_order_report_template
+msgid "Grand Total of Selected Orders:"
+msgstr "Загальна сума вибраних замовлень:"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_barista__id
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_client__id
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_discount__id
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_update_dates_wizard__id
+msgid "ID"
+msgstr "Ідентифікатор"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_barista__write_uid
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_client__write_uid
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_discount__write_uid
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_update_dates_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Останній раз оновлено користувачем"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_barista__write_date
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_client__write_date
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_discount__write_date
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_update_dates_wizard__write_date
+msgid "Last Updated on"
+msgstr "Останній раз оновлено"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_client__loyalty_points
+#: model:ir.model.fields,field_description:caffeine_discount.field_res_partner__loyalty_points
+#: model:ir.model.fields,field_description:caffeine_discount.field_res_users__loyalty_points
+msgid "Loyalty Points"
+msgstr "Бонусні бали"
+
+#. module: caffeine_discount
+#: model:ir.model.fields.selection,name:caffeine_discount.selection__caffeine_discount_barista__gender__male
+#: model:ir.model.fields.selection,name:caffeine_discount.selection__caffeine_discount_client__gender__male
+#: model:ir.model.fields.selection,name:caffeine_discount.selection__caffeine_discount_person_mixin__gender__male
+msgid "Male"
+msgstr "Чоловіча"
+
+#. module: caffeine_discount
+#: model:ir.model,name:caffeine_discount.model_caffeine_discount_update_dates_wizard
+msgid "Mass Reassign Doctor Wizard"
+msgstr "Масове переназначення лікаря"
+
+#. module: caffeine_discount
+#: model:ir.model.fields.selection,name:caffeine_discount.selection__caffeine_discount_barista__shift__morning
+msgid "Morning"
+msgstr "Ранок"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_barista__name
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_client__name
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_person_mixin__name
+msgid "Name"
+msgstr "Ім'я"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_sale_order_line__named_discount
+msgid "Named Discount"
+msgstr "Іменна знижка"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_client_kanban
+msgid "Order Amount:"
+msgstr "Сума замовлення:"
+
+#. module: caffeine_discount
+#: model:ir.actions.act_window,name:caffeine_discount.action_sale_order_pivot
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_sale_order_pivot
+msgid "Order Analysis"
+msgstr "Аналіз замовлень"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_sale_order__order_date
+msgid "Order Date (Custom)"
+msgstr "Дата замовлення (налаштована)"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.caffeine_order_report_template
+msgid "Order Details:"
+msgstr "Деталі замовлення:"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_order_form
+msgid "Order Form"
+msgstr "Форма замовлення"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_order_line_form
+msgid "Order Line"
+msgstr "Рядок замовлення"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_order_line_tree
+msgid "Order Lines"
+msgstr "Рядки замовлення"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_sale_order_line__order_id
+msgid "Order Reference"
+msgstr "Посилання на замовлення"
+
+#. module: caffeine_discount
+#: model:ir.actions.report,name:caffeine_discount.caffeine_order_report
+msgid "Order Report"
+msgstr "Звіт по замовленнях"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_barista__order_ids
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_client__order_ids
+#: model:ir.model.fields,field_description:caffeine_discount.field_res_partner__order_ids
+#: model:ir.model.fields,field_description:caffeine_discount.field_res_users__order_ids
+#: model:ir.ui.menu,name:caffeine_discount.menu_caffeine_discount_order
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_barista_form
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_client_form
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_order_tree
+msgid "Orders"
+msgstr "Замовлення"
+
+#. module: caffeine_discount
+#: model:ir.model.fields.selection,name:caffeine_discount.selection__caffeine_discount_discount__discount_type__percentage
+#: model:ir.model.fields.selection,name:caffeine_discount.selection__res_partner__discount_type__percent
+msgid "Percentage"
+msgstr "Відсоток"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_barista__phone
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_client__phone
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_person_mixin__phone
+msgid "Phone"
+msgstr "Телефон"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_barista_kanban
+msgid "Phone:"
+msgstr "Телефон:"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_barista__photo
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_client__photo
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_person_mixin__photo
+msgid "Photo"
+msgstr "Фото"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_sale_order_line__product_id
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.caffeine_order_report_template
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_product_kanban
+msgid "Product"
+msgstr "Продукт"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_model_product_form
+msgid "Product Form"
+msgstr "Форма продукту"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_model_product_graph
+msgid "Product Graph"
+msgstr "Графік продуктів"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_model_product_form
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_product_kanban
+msgid "Product Photo"
+msgstr "Фото продукту"
+
+#. module: caffeine_discount
+#: model:ir.model,name:caffeine_discount.model_product_product
+msgid "Product Variant"
+msgstr "Варіант продукту"
+
+#. module: caffeine_discount
+#: model:ir.actions.act_window,name:caffeine_discount.action_caffeine_discount_product
+#: model:ir.ui.menu,name:caffeine_discount.menu_caffeine_discount_product
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_model_product_tree
+msgid "Products"
+msgstr "Продукти"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.caffeine_order_report_template
+msgid "Quantity"
+msgstr "Кількість"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_barista__partner_id
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_client__partner_id
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_person_mixin__partner_id
+msgid "Related Partner"
+msgstr "Пов'язаний партнер"
+
+#. module: caffeine_discount
+#: model:ir.model,name:caffeine_discount.model_sale_order
+msgid "Sales Order"
+msgstr "Продажне замовлення"
+
+#. module: caffeine_discount
+#: model:ir.model,name:caffeine_discount.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Рядок продажного замовлення"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_barista_kanban
+msgid "Sales:"
+msgstr "Продажі:"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_barista__shift
+msgid "Shift"
+msgstr "Зміна"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_discount__start_date
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_update_dates_wizard__start_date
+msgid "Start Date"
+msgstr "Дата початку"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_product_product__stock
+msgid "Stock Quantity"
+msgstr "Кількість на складі"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.caffeine_order_report_template
+msgid "Subtotal"
+msgstr "Проміжний підсумок"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_order_tree
+msgid "Total"
+msgstr "Загальна сума"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.caffeine_order_report_template
+msgid "Total Amount:"
+msgstr "Загальна сума:"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_barista__total_order_amount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_client__total_order_amount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_person_mixin__total_order_amount
+#: model:ir.model.fields,field_description:caffeine_discount.field_res_partner__total_order_amount
+#: model:ir.model.fields,field_description:caffeine_discount.field_res_users__total_order_amount
+msgid "Total Order Amount"
+msgstr "Загальна сума замовлення"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_discount__discount_type
+msgid "Type"
+msgstr "Тип"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.caffeine_order_report_template
+msgid "Unit Price"
+msgstr "Ціна за одиницю"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_update_discount_dates_wizard_form
+msgid "Update"
+msgstr "Оновити"
+
+#. module: caffeine_discount
+#: model:ir.actions.server,name:caffeine_discount.action_update_discount_dates
+msgid "Update Dates"
+msgstr "Оновити дати"
+
+#. module: caffeine_discount
+#: model:ir.actions.act_window,name:caffeine_discount.action_update_discount_dates_wizard
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_update_discount_dates_wizard_form
+msgid "Update Discount Dates"
+msgstr "Оновити дати знижок"
+
+#. module: caffeine_discount
+#: model:ir.model.fields,field_description:caffeine_discount.field_caffeine_discount_discount__value
+msgid "Value"
+msgstr "Значення"
+
+#. module: caffeine_discount
+#: model_terms:ir.ui.view,arch_db:caffeine_discount.view_order_tree
+msgid "amount"
+msgstr "сума"
+
+#. module: caffeine_discount
+#: model:product.template,name:caffeine_discount.product_americano_product_template
+msgid "Американо"
+msgstr "Американо"
+
+#. module: caffeine_discount
+#: model:product.template,name:caffeine_discount.product_espresso_product_template
+msgid "Еспресо"
+msgstr "Еспресо"
+
+#. module: caffeine_discount
+#: model:product.template,name:caffeine_discount.product_cappuccino_product_template
+msgid "Капучино"
+msgstr "Капучино"
+
+#. module: caffeine_discount
+#: model:product.template,name:caffeine_discount.product_croissant_product_template
+msgid "Круасан"
+msgstr "Круасан"
+
+#. module: caffeine_discount
+#: model:product.template,name:caffeine_discount.product_latte_product_template
+msgid "Латте"
+msgstr "Латте"
+
+#. module: caffeine_discount
+#: model:product.template,name:caffeine_discount.product_sandwich_product_template
+msgid "Сендвіч"
+msgstr "Сендвіч"
+
+#. module: caffeine_discount
+#: model:product.template,name:caffeine_discount.product_tea_product_template
+msgid "Чай"
+msgstr "Чай"

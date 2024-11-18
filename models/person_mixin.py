@@ -76,7 +76,6 @@ class PersonMixin(models.AbstractModel):
     """
 
     total_order_amount = fields.Float(
-        string='Total Order Amount',
         compute='_compute_total_order_amount',
         store=True
     )

@@ -33,7 +33,6 @@ class ModelDiscount(models.Model):
     """
 
     value = fields.Float(
-        string='Value',
         required=True)
     """
     Float field to represent the value of the discount.

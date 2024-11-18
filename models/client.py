@@ -14,7 +14,7 @@ class ModelClient(models.Model):
     _name = 'caffeine_discount.client'
     _description = 'Client'
 
-    loyalty_points = fields.Integer(string='Loyalty Points', default=0)
+    loyalty_points = fields.Integer(default=0)
     """
     Integer field to store the number of loyalty points accumulated
     by the client.

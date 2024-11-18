@@ -29,7 +29,6 @@ class SaleOrderLine(models.Model):
     product_id = fields.Many2one(
         comodel_name='product.product',
         ondelete='cascade',
-        string='Product',
         required=True
     )
     """
@@ -40,7 +39,6 @@ class SaleOrderLine(models.Model):
 
     discount_id = fields.Many2one(
         comodel_name='caffeine_discount.discount',
-        string='Discount'
     )
     """
     Many2one field representing the discount applied to the sale order line.
@@ -48,7 +46,6 @@ class SaleOrderLine(models.Model):
     """
 
     discount_value = fields.Float(
-        string="Discount Value",
         related='discount_id.value',
         readonly=True
     )
@@ -58,7 +55,6 @@ class SaleOrderLine(models.Model):
     """
 
     named_discount = fields.Float(
-        string="Named Discount",
         compute='_compute_named_discount',
         store=True
     )

@@ -1,97 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <record id="view_client_tree" model="ir.ui.view">
-            <field name="name">caffeine_discount.client.tree</field>
-            <field name="model">caffeine_discount.client</field>
-            <field name="arch" type="xml">
-                <tree>
-                    <field name="name"/>
-                    <field name="gender"/>
-                    <field name="birth_date"/>
-                    <field name="phone"/>
-                    <field name="email"/>
-                    <field name="total_order_amount" readonly="1"/>
-                </tree>
-            </field>
-        </record>
+    <record id="view_client_tree" model="ir.ui.view">
+        <field name="name">caffeine_discount.client.tree</field>
+        <field name="model">caffeine_discount.client</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="gender"/>
+                <field name="birth_date"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="total_order_amount" readonly="1"/>
+            </tree>
+        </field>
+    </record>
 
-        <record id="view_client_form" model="ir.ui.view">
-            <field name="name">caffeine_discount.client.form</field>
-            <field name="model">caffeine_discount.client</field>
-            <field name="arch" type="xml">
-                <form string="Client">
-                    <sheet>
-                        <div class="form_layout_container">
-                            <div class="form_left_section">
-                                <group>
+    <record id="view_client_form" model="ir.ui.view">
+        <field name="name">caffeine_discount.client.form</field>
+        <field name="model">caffeine_discount.client</field>
+        <field name="arch" type="xml">
+            <form string="Client">
+                <sheet>
+                    <div class="form_layout_container">
+                        <div class="form_left_section">
+                            <group>
+                                <field name="name"/>
+                                <field name="phone"/>
+                                <field name="email"/>
+                                <field name="address"/>
+                                <field name="gender"/>
+                                <field name="birth_date"/>
+                                <field name="age" readonly="1"/>
+                                <field name="total_order_amount"
+                                       readonly="1"/>
+                            </group>
+                        </div>
+                        <div class="form_right_section">
+                            <field name="photo"
+                                   widget="image"
+                                   class="oe_avatar_form"
+                                   alt="Client Photo"/>
+                        </div>
+                    </div>
+                    <notebook>
+                        <page string="Orders">
+                            <field name="order_ids" domain="[('client_id', '=', id)]" readonly="1">
+                                <tree create="false" delete="false" edit="false">
                                     <field name="name"/>
-                                    <field name="phone"/>
-                                    <field name="email"/>
-                                    <field name="address"/>
-                                    <field name="gender"/>
-                                    <field name="birth_date"/>
-                                    <field name="age" readonly="1"/>
-                                    <field name="total_order_amount"
-                                           readonly="1"/>
-                                </group>
+                                    <field name="order_date"/>
+                                    <field name="amount_total"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Kanban View -->
+    <record id="view_client_kanban" model="ir.ui.view">
+        <field name="name">caffeine_discount.client.kanban</field>
+        <field name="model">caffeine_discount.client</field>
+        <field name="arch" type="xml">
+            <kanban string="Clients">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_card">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('caffeine_discount.client', 'photo', record.id.raw_value)"
+                                     alt="Client Photo" class="img-fluid rounded"/>
                             </div>
-                            <div class="form_right_section">
-                                <field name="photo"
-                                       widget="image"
-                                       class="oe_avatar_form"
-                                       alt="Client Photo"/>
+                            <div class="o_kanban_details">
+                                <strong><field name="name"/></strong>
+                                <div><field name="phone"/></div>
+                                <div><field name="email"/></div>
+                                <div>
+                                    <t>Order Amount: </t>
+                                    <field name="total_order_amount" readonly="1"/>
+                                </div>
                             </div>
                         </div>
-                        <notebook>
-                            <page string="Orders">
-                                <field name="order_ids" domain="[('client_id', '=', id)]" readonly="1">
-                                    <tree create="false" delete="false" edit="false">
-                                        <field name="name"/>
-                                        <field name="order_date"/>
-                                        <field name="amount_total"/>
-                                    </tree>
-                                </field>
-                            </page>
-                        </notebook>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
 
-        <!-- Kanban View -->
-        <record id="view_client_kanban" model="ir.ui.view">
-            <field name="name">caffeine_discount.client.kanban</field>
-            <field name="model">caffeine_discount.client</field>
-            <field name="arch" type="xml">
-                <kanban string="Clients">
-                    <templates>
-                        <t t-name="kanban-box">
-                            <div class="oe_kanban_global_click o_kanban_card">
-                                <div class="o_kanban_image">
-                                    <img t-att-src="kanban_image('caffeine_discount.client', 'photo', record.id.raw_value)"
-                                         alt="Client Photo" class="img-fluid rounded"/>
-                                </div>
-                                <div class="o_kanban_details">
-                                    <strong><field name="name"/></strong>
-                                    <div><field name="phone"/></div>
-                                    <div><field name="email"/></div>
-                                    <div>
-                                        <t>Order Amount: </t>
-                                        <field name="total_order_amount" readonly="1"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </t>
-                    </templates>
-                </kanban>
-            </field>
-        </record>
-
-        <record id="action_caffeine_discount_client" model="ir.actions.act_window">
-            <field name="name">Clients</field>
-            <field name="res_model">caffeine_discount.client</field>
-            <field name="view_mode">kanban,tree,form</field>
-        </record>
-    </data>
+    <record id="action_caffeine_discount_client" model="ir.actions.act_window">
+        <field name="name">Clients</field>
+        <field name="res_model">caffeine_discount.client</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
 </odoo>

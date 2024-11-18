@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="0">
+    <data noupdate="1">
         <!-- Order 1 -->
         <record id="order_001" model="sale.order">
             <field name="client_id" ref="caffeine_discount.client_ivanov_oleksandr"/>

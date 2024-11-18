@@ -1,54 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
+    <record id="caffeine_discount_client_order_read_rule" model="ir.rule">
+        <field name="name">Client can only view their own orders</field>
+        <field name="model_id" ref="model_sale_order"/>
+        <field name="global" eval="False"/>
+        <field name="domain_force">[('client_id', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[Command.link(ref('caffeine_discount.group_caffeine_discount_client'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
 
-        <record id="caffeine_discount_client_order_read_rule" model="ir.rule">
-            <field name="name">Client can only view their own orders</field>
-            <field name="model_id" ref="model_sale_order"/>
-            <field name="global" eval="False"/>
-            <field name="domain_force">[('client_id', '=', user.partner_id.id)]</field>
-            <field name="groups" eval="[Command.link(ref('caffeine_discount.group_caffeine_discount_client'))]"/>
-            <field name="perm_read" eval="True"/>
-            <field name="perm_write" eval="False"/>
-            <field name="perm_create" eval="False"/>
-            <field name="perm_unlink" eval="False"/>
-        </record>
+    <record id="caffeine_discount_barista_order_rule" model="ir.rule">
+        <field name="name">Barista can view and edit their own orders</field>
+        <field name="model_id" ref="model_sale_order"/>
+        <field name="global" eval="False"/>
+        <field name="domain_force">[('barista_id', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[Command.link(ref('caffeine_discount.group_caffeine_discount_barista'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
 
-        <record id="caffeine_discount_barista_order_rule" model="ir.rule">
-            <field name="name">Barista can view and edit their own orders</field>
-            <field name="model_id" ref="model_sale_order"/>
-            <field name="global" eval="False"/>
-            <field name="domain_force">[('barista_id', '=', user.partner_id.id)]</field>
-            <field name="groups" eval="[Command.link(ref('caffeine_discount.group_caffeine_discount_barista'))]"/>
-            <field name="perm_read" eval="True"/>
-            <field name="perm_write" eval="True"/>
-            <field name="perm_create" eval="False"/>
-            <field name="perm_unlink" eval="False"/>
-        </record>
+    <record id="caffeine_discount_manager_order_rule" model="ir.rule">
+        <field name="name">Manager can view and manage all orders</field>
+        <field name="model_id" ref="model_sale_order"/>
+        <field name="global" eval="False"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[Command.link(ref('caffeine_discount.group_caffeine_discount_manager'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
 
-        <record id="caffeine_discount_manager_order_rule" model="ir.rule">
-            <field name="name">Manager can view and manage all orders</field>
-            <field name="model_id" ref="model_sale_order"/>
-            <field name="global" eval="False"/>
-            <field name="domain_force">[(1, '=', 1)]</field>
-            <field name="groups" eval="[Command.link(ref('caffeine_discount.group_caffeine_discount_manager'))]"/>
-            <field name="perm_read" eval="True"/>
-            <field name="perm_write" eval="True"/>
-            <field name="perm_create" eval="True"/>
-            <field name="perm_unlink" eval="True"/>
-        </record>
-
-        <record id="caffeine_discount_admin_order_rule" model="ir.rule">
-            <field name="name">Administrator has full rights on all orders</field>
-            <field name="model_id" ref="model_sale_order"/>
-            <field name="global" eval="False"/>
-            <field name="domain_force">[(1, '=', 1)]</field>
-            <field name="groups" eval="[Command.link(ref('caffeine_discount.group_caffeine_discount_admin'))]"/>
-            <field name="perm_read" eval="True"/>
-            <field name="perm_write" eval="True"/>
-            <field name="perm_create" eval="True"/>
-            <field name="perm_unlink" eval="True"/>
-        </record>
-
-    </data>
+    <record id="caffeine_discount_admin_order_rule" model="ir.rule">
+        <field name="name">Administrator has full rights on all orders</field>
+        <field name="model_id" ref="model_sale_order"/>
+        <field name="global" eval="False"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[Command.link(ref('caffeine_discount.group_caffeine_discount_admin'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
 </odoo>

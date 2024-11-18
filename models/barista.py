@@ -18,7 +18,7 @@ class ModelBarista(models.Model):
         ('morning', 'Morning'),
         ('afternoon', 'Afternoon'),
         ('evening', 'Evening')
-    ], string='Shift')
+    ])
     """
     Selection field to indicate the work shift of the barista.
     Values can be 'morning', 'afternoon', or 'evening'.
@@ -27,7 +27,6 @@ class ModelBarista(models.Model):
     order_ids = fields.One2many(
         comodel_name='sale.order',
         inverse_name='barista_id',
-        string='Orders'
     )
     """
     One2many field representing the list of orders handled by the barista.

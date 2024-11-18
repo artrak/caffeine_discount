@@ -1,122 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <record id="view_product_kanban" model="ir.ui.view">
-            <field name="name">caffeine_discount.product.kanban</field>
-            <field name="model">product.product</field>
-            <field name="priority" eval="20"/>
-            <field name="arch" type="xml">
-                <kanban class="o_kanban_small_column" string="Product">
-                    <templates>
-                        <t t-name="kanban-box">
-                            <div t-attf-class="oe_kanban_global_click o_product_kanban_box">
-                                <!-- Контейнер для зображення -->
-                                <div class="o_kanban_image_container">
-                                    <!-- Фото -->
-                                    <field name="image_1920"
-                                           widget="image"
-                                           class="oe_avatar"
-                                           alt="Product Photo" />
-                                    <!-- Текст -->
-                                    <div class="o_kanban_text_overlay">
-                                        <strong style="font-size: xx-large;"><field name="name"/></strong>
-                                        <div><strong style="font-size: larger;"><field name="lst_price"/></strong></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </t>
-                    </templates>
-                </kanban>
-            </field>
-        </record>
-
-
-        <!-- Дерево-представлення для ModelProduct -->
-        <record id="view_model_product_tree" model="ir.ui.view">
-            <field name="name">model.product.tree</field>
-            <field name="model">product.product</field>
-            <field name="priority" eval="20"/>
-            <field name="arch" type="xml">
-                <tree>
-                    <field name="name"/>
-                    <field name="category"/>
-<!--                    <field name="category_id"/>-->
-                    <field name="stock"/>
-                    <field name="list_price"/>
-                </tree>
-            </field>
-        </record>
-
-        <!-- Форма-представлення для ModelProduct -->
-        <record id="view_model_product_form" model="ir.ui.view">
-            <field name="name">model.product.form</field>
-            <field name="model">product.product</field>
-            <field name="priority" eval="20"/>
-            <field name="arch" type="xml">
-                <form string="Product Form">
-                    <header>
-                        <!-- Status bar to display the status category -->
-                        <field name="category" widget="statusbar"
-                               options="{'clickable': '1'}"/>
-                    </header>
-                    <sheet>
-                        <div class="form_layout_container">
-                            <!-- Ліва частина -->
-                            <div class="form_left_section">
-                                <group>
-                                    <field name="name"/>
-                                    <field name="category"/>
-<!--                                    <field name="category_id"/>-->
-                                    <field name="stock"/>
-                                    <field name="list_price"/>
-                                </group>
-                            </div>
-
-                            <!-- Права частина з фото -->
-                            <div class="form_right_section">
+    <record id="view_product_kanban" model="ir.ui.view">
+        <field name="name">caffeine_discount.product.kanban</field>
+        <field name="model">product.product</field>
+        <field name="priority" eval="20"/>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_small_column" string="Product">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click o_product_kanban_box">
+                            <!-- Контейнер для зображення -->
+                            <div class="o_kanban_image_container">
+                                <!-- Фото -->
                                 <field name="image_1920"
                                        widget="image"
-                                       class="oe_avatar_form"
-                                       alt="Product Photo"/>
+                                       class="oe_avatar"
+                                       alt="Product Photo" />
+                                <!-- Текст -->
+                                <div class="o_kanban_text_overlay">
+                                    <strong style="font-size: xx-large;"><field name="name"/></strong>
+                                    <div><strong style="font-size: larger;"><field name="lst_price"/></strong></div>
+                                </div>
                             </div>
                         </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
 
-                        <group>
-                            <field name="discount_ids"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
 
-        <record id="view_model_product_graph" model="ir.ui.view">
-            <field name="name">model.product.graph</field>
-            <field name="model">product.product</field>
-            <field name="priority" eval="20"/>
-            <field name="arch" type="xml">
-                <graph string="Product Graph" type="bar">
-                    <field name="category" type="row"/>
-                    <field name="stock" type="measure"/>
-                    <field name="list_price" type="measure"/>
-                </graph>
-            </field>
-        </record>
+    <!-- Дерево-представлення для ModelProduct -->
+    <record id="view_model_product_tree" model="ir.ui.view">
+        <field name="name">model.product.tree</field>
+        <field name="model">product.product</field>
+        <field name="priority" eval="20"/>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="category"/>
+<!--                    <field name="category_id"/>-->
+                <field name="stock"/>
+                <field name="list_price"/>
+            </tree>
+        </field>
+    </record>
 
-        <record id="action_caffeine_discount_product" model="ir.actions.act_window">
-            <field name="name">Products</field>
-            <field name="res_model">product.product</field>
-            <field name="view_mode">kanban,tree,form,graph</field>
-            <field name="view_id" ref="view_product_kanban"/>
+    <!-- Форма-представлення для ModelProduct -->
+    <record id="view_model_product_form" model="ir.ui.view">
+        <field name="name">model.product.form</field>
+        <field name="model">product.product</field>
+        <field name="priority" eval="20"/>
+        <field name="arch" type="xml">
+            <form string="Product Form">
+                <header>
+                    <!-- Status bar to display the status category -->
+                    <field name="category" widget="statusbar"
+                           options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                    <div class="form_layout_container">
+                        <!-- Ліва частина -->
+                        <div class="form_left_section">
+                            <group>
+                                <field name="name"/>
+                                <field name="category"/>
+<!--                                    <field name="category_id"/>-->
+                                <field name="stock"/>
+                                <field name="list_price"/>
+                            </group>
+                        </div>
+
+                        <!-- Права частина з фото -->
+                        <div class="form_right_section">
+                            <field name="image_1920"
+                                   widget="image"
+                                   class="oe_avatar_form"
+                                   alt="Product Photo"/>
+                        </div>
+                    </div>
+
+                    <group>
+                        <field name="discount_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_model_product_graph" model="ir.ui.view">
+        <field name="name">model.product.graph</field>
+        <field name="model">product.product</field>
+        <field name="priority" eval="20"/>
+        <field name="arch" type="xml">
+            <graph string="Product Graph" type="bar">
+                <field name="category" type="row"/>
+                <field name="stock" type="measure"/>
+                <field name="list_price" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_caffeine_discount_product" model="ir.actions.act_window">
+        <field name="name">Products</field>
+        <field name="res_model">product.product</field>
+        <field name="view_mode">kanban,tree,form,graph</field>
+        <field name="view_id" ref="view_product_kanban"/>
 <!--            <field name="view_id" ref="view_model_product_form"/>-->
-            <field name="context">{}</field>
+        <field name="context">{}</field>
 <!--            <field name="view_ids" eval="[-->
 <!--                (0, 0, {'view_mode': 'kanban', 'view_id': ref('caffeine_discount.view_product_kanban')}),-->
 <!--                (0, 0, {'view_mode': 'tree', 'view_id': ref('caffeine_discount.view_model_product_tree')}),-->
 <!--                (0, 0, {'view_mode': 'form', 'view_id': ref('caffeine_discount.view_model_product_form')})-->
 <!--            ]"/>-->
 <!--            <field name="view_id" ref="caffeine_discount.view_product_kanban"/>-->
-        </record>
-
-
-    </data>
+    </record>
 </odoo>

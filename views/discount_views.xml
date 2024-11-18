@@ -1,89 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-
-        <record id="view_discount_form" model="ir.ui.view">
-            <field name="name">caffeine_discount.discount.form</field>
-            <field name="model">caffeine_discount.discount</field>
-            <field name="arch" type="xml">
-                <form string="Discount">
-                    <header>
-                        <!-- Status bar to display the status of the discount_type -->
-                        <field name="discount_type" widget="statusbar" options="{'clickable': '1'}"/><!-- Button to change the personal doctor of a patient -->
-                    </header>
-                    <sheet>
-                        <group>
+    <record id="view_discount_form" model="ir.ui.view">
+        <field name="name">caffeine_discount.discount.form</field>
+        <field name="model">caffeine_discount.discount</field>
+        <field name="arch" type="xml">
+            <form string="Discount">
+                <header>
+                    <!-- Status bar to display the status of the discount_type -->
+                    <field name="discount_type" widget="statusbar" options="{'clickable': '1'}"/><!-- Button to change the personal doctor of a patient -->
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="discount_type"/>
+                        <field name="value"/>
+                        <field name="is_active"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                    </group>
+                    <field name="product_ids">
+                        <tree>
                             <field name="name"/>
-                            <field name="discount_type"/>
-                            <field name="value"/>
-                            <field name="is_active"/>
-                            <field name="start_date"/>
-                            <field name="end_date"/>
-                        </group>
-                        <field name="product_ids">
-                            <tree>
-                                <field name="name"/>
-                            </tree>
-                        </field>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-        <!-- Action for Bulk Update -->
-        <record id="action_update_discount_dates" model="ir.actions.server">
-            <field name="name">Update Dates</field>
-            <field name="model_id" ref="model_caffeine_discount_discount"/>
-            <field name="binding_view_types">tree</field>
-            <field name="state">code</field>
-            <field name="code">
-                action = {
-                    'type': 'ir.actions.act_window',
-                    'res_model': 'caffeine_discount.update_dates_wizard',
-                    'view_mode': 'form',
-                    'target': 'new',
-                }
-            </field>
-        </record>
+    <!-- Action for Bulk Update -->
+    <record id="action_update_discount_dates" model="ir.actions.server">
+        <field name="name">Update Dates</field>
+        <field name="model_id" ref="model_caffeine_discount_discount"/>
+        <field name="binding_view_types">tree</field>
+        <field name="state">code</field>
+        <field name="code">
+            action = {
+                'type': 'ir.actions.act_window',
+                'res_model': 'caffeine_discount.update_dates_wizard',
+                'view_mode': 'form',
+                'target': 'new',
+            }
+        </field>
+    </record>
 
-        <record id="view_discount_tree" model="ir.ui.view">
-            <field name="name">caffeine_discount.discount.tree</field>
-            <field name="model">caffeine_discount.discount</field>
-            <field name="arch" type="xml">
-                <tree>
-                    <header>
-                       <button name="%(action_update_discount_dates_wizard)d"
-                                string="Change discount date"
-                                type="action"/>
-                    </header>
-                    <field name="name"/>
-                    <field name="discount_type"/>
-                    <field name="value"/>
-                    <field name="is_active" readonly="1"/>
-                    <field name="start_date"/>
-                    <field name="end_date"/>
-                </tree>
-            </field>
-        </record>
+    <record id="view_discount_tree" model="ir.ui.view">
+        <field name="name">caffeine_discount.discount.tree</field>
+        <field name="model">caffeine_discount.discount</field>
+        <field name="arch" type="xml">
+            <tree>
+                <header>
+                   <button name="%(action_update_discount_dates_wizard)d"
+                            string="Change discount date"
+                            type="action"/>
+                </header>
+                <field name="name"/>
+                <field name="discount_type"/>
+                <field name="value"/>
+                <field name="is_active" readonly="1"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+            </tree>
+        </field>
+    </record>
 
 
-        <record id="view_discount_calendar" model="ir.ui.view">
-            <field name="name">Calendar</field>
-            <field name="model">caffeine_discount.discount</field>
-            <field name="arch" type="xml">
-                <calendar string="Discount Calendar" date_start="start_date" date_stop="end_date">
-                    <field name="name"/>
-                    <field name="discount_type"/>
-                    <field name="value"/>
-                    <field name="is_active" readonly="1"/>
-                </calendar>
-            </field>
-        </record>
+    <record id="view_discount_calendar" model="ir.ui.view">
+        <field name="name">Calendar</field>
+        <field name="model">caffeine_discount.discount</field>
+        <field name="arch" type="xml">
+            <calendar string="Discount Calendar" date_start="start_date" date_stop="end_date">
+                <field name="name"/>
+                <field name="discount_type"/>
+                <field name="value"/>
+                <field name="is_active" readonly="1"/>
+            </calendar>
+        </field>
+    </record>
 
-        <record id="action_caffeine_discount_discount" model="ir.actions.act_window">
-            <field name="name">Discounts</field>
-            <field name="res_model">caffeine_discount.discount</field>
-            <field name="view_mode">tree,form,calendar</field>
-        </record>
-    </data>
+    <record id="action_caffeine_discount_discount" model="ir.actions.act_window">
+        <field name="name">Discounts</field>
+        <field name="res_model">caffeine_discount.discount</field>
+        <field name="view_mode">tree,form,calendar</field>
+    </record>
 </odoo>

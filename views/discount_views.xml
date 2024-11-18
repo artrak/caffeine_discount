@@ -50,7 +50,7 @@
             <field name="name">caffeine_discount.discount.tree</field>
             <field name="model">caffeine_discount.discount</field>
             <field name="arch" type="xml">
-                <tree string="Discounts">
+                <tree>
                     <header>
                        <button name="%(action_update_discount_dates_wizard)d"
                                 string="Change discount date"

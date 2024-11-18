@@ -24,7 +24,7 @@
             <field name="name">caffeine_discount.order.line.tree</field>
             <field name="model">sale.order.line</field>
             <field name="arch" type="xml">
-                <tree string="Order Lines">
+                <tree>
                     <field name="order_id"/>
                     <field name="product_id"/>
 <!--                    <field name="quantity"/>-->

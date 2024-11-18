@@ -72,9 +72,7 @@ class SaleOrder(models.Model):
         Returns:
             dict: Default values for the given fields.
         """
-        # Отримуємо стандартні значення
         res = super(SaleOrder, self).default_get(fields_list)
-        # Якщо partner_id ще не встановлено, присвоюємо його як поточного користувача
         if 'partner_id' in fields_list and not res.get('partner_id'):
             res['partner_id'] = self.env.user.partner_id.id
         return res

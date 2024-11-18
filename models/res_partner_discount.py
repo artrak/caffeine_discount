@@ -17,7 +17,7 @@ class ResPartnerDiscount(models.Model):
         ('percent', 'Percentage')
     ], string="Discount Type", default='percent')
     """
-    Selection field representing the type of discount applicable to the partner.
+    Selection field representing the type of discount applicable to the partner
     It can either be a fixed amount or a percentage. Defaults to 'percent'.
     """
 
@@ -58,10 +58,12 @@ class ResPartnerDiscount(models.Model):
     def update_loyalty_points(self, amount):
         """
         Update the loyalty points of the partner based on the provided amount.
-        Points are earned at a rate of 1 point for every 10 currency units spent.
+        Points are earned at a rate of 1 point for every 10 currency
+        units spent.
 
         Args:
             amount (float): The amount spent by the partner.
         """
-        points_earned = amount // 10  # Calc points earned based on amount spent
+        points_earned = amount // 10  # Calc points earned based
+        # on amount spent
         self.loyalty_points += points_earned

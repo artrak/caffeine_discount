@@ -29,7 +29,7 @@ class ResPartner(models.Model):
         store=True
     )
     """
-    Float field representing the total amount of all orders made by the partner.
+    Float field representing the total amount of all orders made by the partner
     It is computed automatically by summing up the `amount_total`
     from related orders.
     """

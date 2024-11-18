@@ -5,7 +5,7 @@
             <field name="name">caffeine_discount.sale.order.tree</field>
             <field name="model">sale.order</field>
             <field name="arch" type="xml">
-                <tree string="Orders">
+                <tree>
                     <field name="name"/>
                     <field name="barista_id"/>
                     <field name="client_id" optional="hide"/>

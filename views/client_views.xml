@@ -5,7 +5,7 @@
             <field name="name">caffeine_discount.client.tree</field>
             <field name="model">caffeine_discount.client</field>
             <field name="arch" type="xml">
-                <tree string="Clients">
+                <tree>
                     <field name="name"/>
                     <field name="gender"/>
                     <field name="birth_date"/>

@@ -82,7 +82,8 @@ class PersonMixin(models.AbstractModel):
     )
     """
     Float field representing the total amount of all orders made by the person.
-    It is computed automatically by summing up the `amount_total` of related orders.
+    It is computed automatically by summing up the `amount_total` 
+    of related orders.
     """
 
     @api.depends('order_ids.amount_total')

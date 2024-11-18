@@ -2,8 +2,10 @@
     'name': 'Caffeine Discount',
     'version': '17.0.1.0.0',
     'summary': (
-        'Caffeine Discount is a loyalty and discount management module for coffee '
-        'shops. It allows customers to earn rewards, manage discounts, and benefit '
+        'Caffeine Discount is a loyalty and discount management '
+        'module for coffee '
+        'shops. It allows customers to earn rewards, '
+        'manage discounts, and benefit '
         'from personalized loyalty programs to enhance their experience.'
     ),
     'category': 'Sales',
@@ -23,9 +25,9 @@
     },
 
     'data': [
-        # 'security/caffeine_discount_groups.xml'
+        'security/caffeine_discount_groups.xml',
         'security/ir.model.access.csv',
-        # 'security/caffeine_discount_security.xml'
+        'security/caffeine_discount_security.xml',
 
         'wizard/discount_dates_wizard_views.xml',
 
@@ -53,7 +55,7 @@
     ],
     'assets': {
         'web.assets_backend': [
-            '/caffeine_discount/static/src/css/style.css',  # Шлях до вашого CSS
+            '/caffeine_discount/static/src/css/style.css',  # Шлях до CSS
         ],
     },
 

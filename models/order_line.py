@@ -79,7 +79,8 @@ class SaleOrderLine(models.Model):
         for line in self:
             if line.order_id.partner_id and hasattr(line.order_id.partner_id,
                                                     'total_order_amount'):
-                total_order_amount = line.order_id.partner_id.total_order_amount
+                total_order_amount \
+                    = line.order_id.partner_id.total_order_amount
                 if total_order_amount >= 100:
                     line.named_discount = 10.0
                 elif total_order_amount >= 50:
@@ -183,7 +184,8 @@ class SaleOrderLine(models.Model):
     def _compute_amount(self):
         super(SaleOrderLine, self)._compute_amount()
         for line in self:
-            line.price_subtotal = line.product_uom_qty * line.discounted_price_unit
+            line.price_subtotal \
+                = line.product_uom_qty * line.discounted_price_unit
 
     @api.depends('product_uom_qty', 'price_unit', 'discount_id')
     def _compute_amount(self):
@@ -192,11 +194,13 @@ class SaleOrderLine(models.Model):
             discount_amount = 0
             if line.discount_id:
                 if line.discount_id.discount_type == 'percentage':
-                    discount_amount = line.price_unit * (line.discount_id.value / 100)
+                    discount_amount = (
+                            line.price_unit * (line.discount_id.value / 100))
                 elif line.discount_id.discount_type == 'fixed':
                     discount_amount = line.discount_id.value
 
-            line.price_subtotal = line.product_uom_qty * (line.price_unit - discount_amount)
+            line.price_subtotal \
+                = (line.product_uom_qty * (line.price_unit - discount_amount))
 
     @api.model
     def create(self, vals):
